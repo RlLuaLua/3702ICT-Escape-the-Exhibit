@@ -7,10 +7,8 @@ public class PlayerController : MonoBehaviour
 
     public float moveSpeed;
     public float jumpForce;
-    public CharacterController controller;
 
-   
-    
+    public CharacterController controller;
     private Vector3 moveDirection;
     public float gravityScale;
     // Start is called before the first frame update
@@ -33,7 +31,6 @@ public class PlayerController : MonoBehaviour
         */
 
         moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, moveDirection.y, 0f);
-        
         if(controller.isGrounded)
         {
             moveDirection.y = Physics.gravity.y * gravityScale; //stops downward acceleration from increasing while on the ground
