@@ -14,6 +14,7 @@ public class SpikeScript : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter(Collider other)
     {
-        other.gameObject.GetComponent<HealthController>().ReceiveDamage(1);
+        if(other.gameObject.GetComponent<HealthController>())
+        other.gameObject.GetComponent<HealthController>().ReceiveDamage(damage);
     }
 }
