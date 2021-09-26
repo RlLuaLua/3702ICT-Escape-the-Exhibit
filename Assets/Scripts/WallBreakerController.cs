@@ -21,10 +21,12 @@ public class WallBreakerController : MonoBehaviour
 
     public float chargeRange = 3.0f;
     private float damage = 3;
+    public float stunTime = 30.0f;
 
     private float waitTime = 1.5f;
     private float timeElapsed = 0.0f;
 
+    private Rigidbody _rigidBody;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,7 @@ public class WallBreakerController : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         // Select Wallbreaker for gizmos
         UnityEditor.Selection.activeGameObject = GameObject.FindGameObjectWithTag("WallBreaker");
+        _rigidBody = GetComponent<Rigidbody>();
         // Set wb starting state
         currentState = FSMState.Idle;
         // Get player
@@ -53,11 +56,13 @@ public class WallBreakerController : MonoBehaviour
       }
 
       float distance = Vector3.Distance(transform.position, player.position);
-      if (distance <= chargeRange && currentState != FSMState.Stunned && currentState != FSMState.Defeat) {
-        currentState = FSMState.Charge;
-      }
-      if (distance > chargeRange) {
-        currentState = FSMState.Idle;
+      if (currentState != FSMState.Stunned && currentState != FSMState.Defeat) {
+        if (distance <= chargeRange) {
+          currentState = FSMState.Charge;
+        }
+        if (distance > chargeRange) {
+          currentState = FSMState.Idle;
+        }
       }
     }
 
@@ -68,11 +73,11 @@ public class WallBreakerController : MonoBehaviour
     protected void UpdateChargeState() {
       if (!chargeStarted) {
         chargeStarted = true;
-        chargeToPosition = player.position;
+        chargeToPosition = new Vector3(player.position.x, 0.0f);
+        nav.isStopped = false;
       }
-      float distance = Vector3.Distance(transform.position, player.position);
       timeElapsed += Time.deltaTime;
-      if (timeElapsed > waitTime) {
+      if (chargeStarted == false || timeElapsed > waitTime) {
         nav.SetDestination(chargeToPosition);
         timeElapsed = 0.0f;
       }
@@ -81,23 +86,31 @@ public class WallBreakerController : MonoBehaviour
       }
     }
     protected void UpdateStunnedState() {
-      // TODO: Implement timer, check if player in range and change to charge or idle state
+      chargeStarted = false;
+      _rigidBody.velocity = Vector3.zero;
+      print(timeElapsed);
+      timeElapsed += Time.deltaTime;
+      if (timeElapsed >= stunTime) {
+        currentState = FSMState.Idle;
+        timeElapsed = 0.0f;
+      }
     }
     protected void UpdateDefeatState() {
       // TODO: Implement death animation
+      _rigidBody.velocity = Vector3.zero;
     }
 
     void OnTriggerEnter(Collider collider){
-      nav.SetDestination(transform.position);
+      chargeToPosition = transform.position;
       nav.isStopped = true;
-      currentState = FSMState.Stunned;
       if (collider.gameObject.tag == "Player") {
+        currentState = FSMState.Stunned;
         collider.gameObject.SendMessage("ReceiveDamage", damage);
       }
       if (collider.gameObject.tag == "Breakable_Wall") {
         print("Hit Breakable Wall!");
         currentState = FSMState.Defeat;
-        // TODO: Send message to wall to destroy???
+        collider.gameObject.SendMessage("BreakWall");
       }
     }
 

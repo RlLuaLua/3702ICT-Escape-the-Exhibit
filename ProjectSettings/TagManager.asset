@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spin
   - WallBreaker
+  - Breakable_Wall
   layers:
   - Default
   - TransparentFX
