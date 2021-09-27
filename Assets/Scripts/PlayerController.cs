@@ -6,11 +6,12 @@ public class PlayerController : MonoBehaviour
 {
 
     public float moveSpeed;
-    float jumpForce = 13f;
+    public float jumpForce;
+
 
     public CharacterController controller;
     private Vector3 moveDirection;
-    float gravityScale = 0.03f;
+    public float gravityScale;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,26 +22,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        /*RB.velocity = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, RB.velocity.y, 0Input.GetAxis("Vertical") * moveSpeed);
-
-        if(Input.GetButtonDown("Jump"))
-        {
-            RB.velocity = new Vector3(RB.velocity.x, jumpForce, RB.velocity.z);
-        }
-        */
-
-        moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, moveDirection.y, 0f);
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        moveDirection = new Vector3(horizontal * moveSpeed, moveDirection.y, 0f);
         if(controller.isGrounded)
         {
             moveDirection.y = Physics.gravity.y * gravityScale; //stops downward acceleration from increasing while on the ground
             if(Input.GetButtonDown("Jump")) //player can only jump while grounded
             {
-                moveDirection.y = jumpForce;
+                moveDirection.y += jumpForce;
             }
         }
 
-        moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale);
+        moveDirection.y += (Physics.gravity.y * gravityScale * Time.deltaTime);
         controller.Move(moveDirection * Time.deltaTime);
     }
 }
