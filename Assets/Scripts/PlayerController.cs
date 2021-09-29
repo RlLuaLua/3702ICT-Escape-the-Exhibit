@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 
     public float moveSpeed;
     public float jumpForce;
-
+    private float friction;
 
     public CharacterController controller;
     private Vector3 moveDirection;
@@ -22,7 +22,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
+        var horizontal = Input.GetAxisRaw("Horizontal");
+
         moveDirection = new Vector3(horizontal * moveSpeed, moveDirection.y, 0f);
         if(controller.isGrounded)
         {
@@ -31,7 +32,7 @@ public class PlayerController : MonoBehaviour
             {
                 moveDirection.y += jumpForce;
             }
-        }
+        }else
 
         moveDirection.y += (Physics.gravity.y * gravityScale * Time.deltaTime);
         controller.Move(moveDirection * Time.deltaTime);
