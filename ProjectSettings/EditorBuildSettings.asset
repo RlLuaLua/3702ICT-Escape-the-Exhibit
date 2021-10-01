@@ -7,5 +7,17 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
+    guid: 5f3907d39dd4f4217bfc4590b695ede3
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 77369d4b763b245708ae066d2d1fcb9f
+  - enabled: 1
+    path: Assets/Scenes/AustinScene1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/AustinScene2.unity
+    guid: 32281d262b4d646f48c0c4d6c9a2d655
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 70eb1b5dcc7b34883a1c40e0b7ab2821
   m_configObjects: {}
