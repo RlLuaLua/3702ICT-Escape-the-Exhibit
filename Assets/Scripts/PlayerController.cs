@@ -38,14 +38,14 @@ public class PlayerController : MonoBehaviour
         }
 
         //code for rotating player
-        Debug.Log(moveDirection.x);
         if(moveDirection.x >= 0.1f || -0.1f >= moveDirection.x){
             float targetDir = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg -90;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetDir, ref turnVelocity, turnTime);
-            Debug.Log(turnVelocity);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
         }
 
+
+        //final movement direction for this frame   
         moveDirection.y += (Physics.gravity.y * gravityScale * Time.deltaTime);
         controller.Move(moveDirection * Time.deltaTime);
     }
