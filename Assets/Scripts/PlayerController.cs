@@ -6,11 +6,15 @@ public class PlayerController : MonoBehaviour
 {
 
     public float moveSpeed;
-    float jumpForce = 13f;
+    public float jumpForce;
+    private float friction;
+
+    public float turnTime = 0.02f;//time it takes for the character to turn
+    float turnVelocity;
 
     public CharacterController controller;
     private Vector3 moveDirection;
-    float gravityScale = 0.03f;
+    public float gravityScale;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,26 +25,28 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        /*RB.velocity = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, RB.velocity.y, 0Input.GetAxis("Vertical") * moveSpeed);
+        var horizontal = Input.GetAxisRaw("Horizontal");
 
-        if(Input.GetButtonDown("Jump"))
-        {
-            RB.velocity = new Vector3(RB.velocity.x, jumpForce, RB.velocity.z);
-        }
-        */
-
-        moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, moveDirection.y, 0f);
-        if(controller.isGrounded)
+        moveDirection = new Vector3(horizontal * moveSpeed, moveDirection.y, 0f);
+        if(controller.isGrounded)//if the player is touching the ground
         {
             moveDirection.y = Physics.gravity.y * gravityScale; //stops downward acceleration from increasing while on the ground
             if(Input.GetButtonDown("Jump")) //player can only jump while grounded
             {
-                moveDirection.y = jumpForce;
+                moveDirection.y += jumpForce;
             }
         }
 
-        moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale);
+        //code for rotating player
+        if(moveDirection.x >= 0.1f || -0.1f >= moveDirection.x){
+            float targetDir = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg -90;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetDir, ref turnVelocity, turnTime);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+        }
+
+
+        //final movement direction for this frame   
+        moveDirection.y += (Physics.gravity.y * gravityScale * Time.deltaTime);
         controller.Move(moveDirection * Time.deltaTime);
     }
 }
