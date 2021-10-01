@@ -43,4 +43,10 @@ public class HealthController : MonoBehaviour
         invulntimer += gracePeriod;//set timer for damage invulnerability
         Debug.Log(cur_health);
     }
+
+    public void AddHealth(float healthAmount)
+    {
+        Debug.Log("Adding health " + healthAmount);
+        cur_health += healthAmount;
+    }
 }
