@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     private float friction;
 
+    public float turnTime = 0.02f;//time it takes for the character to turn
+    float turnVelocity;
+
     public CharacterController controller;
     private Vector3 moveDirection;
     public float gravityScale;
@@ -25,14 +28,23 @@ public class PlayerController : MonoBehaviour
         var horizontal = Input.GetAxisRaw("Horizontal");
 
         moveDirection = new Vector3(horizontal * moveSpeed, moveDirection.y, 0f);
-        if(controller.isGrounded)
+        if(controller.isGrounded)//if the player is touching the ground
         {
             moveDirection.y = Physics.gravity.y * gravityScale; //stops downward acceleration from increasing while on the ground
             if(Input.GetButtonDown("Jump")) //player can only jump while grounded
             {
                 moveDirection.y += jumpForce;
             }
-        }else
+        }
+
+        //code for rotating player
+        Debug.Log(moveDirection.x);
+        if(moveDirection.x >= 0.1f || -0.1f >= moveDirection.x){
+            float targetDir = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg -90;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetDir, ref turnVelocity, turnTime);
+            Debug.Log(turnVelocity);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+        }
 
         moveDirection.y += (Physics.gravity.y * gravityScale * Time.deltaTime);
         controller.Move(moveDirection * Time.deltaTime);
