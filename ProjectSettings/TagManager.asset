@@ -7,6 +7,7 @@ TagManager:
   - Spin
   - WallBreaker
   - Breakable_Wall
+  - Lever
   layers:
   - Default
   - TransparentFX
