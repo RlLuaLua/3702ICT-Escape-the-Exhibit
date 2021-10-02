@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LeverController : Interactable
 {
+    public GameObject platform;
     public GameObject handle;
     public bool isOn;
 
@@ -21,5 +20,12 @@ public class LeverController : Interactable
     public override void SpinInteract()
     {
         isOn = !isOn;
+        platform.GetComponent<PlatformController>().Interact(gameObject);
+            
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(transform.position, platform.transform.position);
     }
 }
