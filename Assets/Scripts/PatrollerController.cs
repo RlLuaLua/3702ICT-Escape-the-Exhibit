@@ -9,7 +9,6 @@ public class PatrollerController : MonoBehaviour
         Deactivate
     }
 
-    public LeverController lever;
     public FSMState currentState;
     public GameObject[] waypointList;
     public int currentWaypoint = 0;
@@ -19,6 +18,7 @@ public class PatrollerController : MonoBehaviour
     public float slopeForceRayLength = 2.0f;
 
     protected float timeElapsed = 0.0f;
+    protected LeverController lever;
     public float interactionDuration = 2.0f;
 
     // Start is called before the first frame update
