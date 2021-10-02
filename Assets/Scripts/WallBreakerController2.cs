@@ -1,9 +1,8 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class WallBreakerController : MonoBehaviour
+public class WallBreakerController2 : MonoBehaviour
 {
-    private NavMeshAgent nav;
     protected Transform player;
 
     public enum FSMState
@@ -16,8 +15,8 @@ public class WallBreakerController : MonoBehaviour
 
     public FSMState currentState;
 
-    protected bool chargeStarted = false;
-    protected Vector3 chargeToPosition;
+    public bool chargeStarted = false;
+    public Vector3 chargeToPosition;
 
     public float chargeRange = 3.0f;
     private float damage = 3;
@@ -26,15 +25,9 @@ public class WallBreakerController : MonoBehaviour
     private float waitTime = 1.5f;
     private float timeElapsed = 0.0f;
 
-    private Rigidbody _rigidBody;
-
     // Start is called before the first frame update
     void Start()
     {
-        nav = GetComponent<NavMeshAgent>();
-        // Select Wallbreaker for gizmos
-        UnityEditor.Selection.activeGameObject = GameObject.FindGameObjectWithTag("WallBreaker");
-        _rigidBody = GetComponent<Rigidbody>();
         // Set wb starting state
         currentState = FSMState.Idle;
         // Get player
@@ -71,23 +64,21 @@ public class WallBreakerController : MonoBehaviour
     }
 
     protected void UpdateChargeState() {
-      if (!chargeStarted) {
-        chargeStarted = true;
-        chargeToPosition = new Vector3(player.position.x, 0.0f, 0.0f);
-        nav.isStopped = false;
-      }
-      timeElapsed += Time.deltaTime;
-      if (chargeStarted == false || timeElapsed > waitTime) {
-        nav.SetDestination(chargeToPosition);
-        timeElapsed = 0.0f;
-      }
-      if (Vector3.Distance(transform.position, chargeToPosition) <= 0.5f) {
-        chargeStarted = false;
-      }
+        if (!chargeStarted) {
+            chargeStarted = true;
+            chargeToPosition = new Vector3(player.position.x, transform.position.y, 0.0f);
+        }
+        else {
+          transform.rotation = Quaternion.LookRotation(chargeToPosition, Vector3.zero);
+          transform.position = Vector3.MoveTowards(transform.position, chargeToPosition, Time.deltaTime * 5.0f);
+        }
+        if (Vector3.Distance(transform.position, chargeToPosition) <= 0.5f)
+        {
+            chargeStarted = false;
+        }
     }
     protected void UpdateStunnedState() {
       chargeStarted = false;
-      _rigidBody.velocity = Vector3.zero;
       print(timeElapsed);
       timeElapsed += Time.deltaTime;
       if (timeElapsed >= stunTime) {
@@ -97,13 +88,11 @@ public class WallBreakerController : MonoBehaviour
     }
     protected void UpdateDefeatState() {
       // TODO: Implement death animation
-      _rigidBody.velocity = Vector3.zero;
     }
 
     void OnTriggerEnter(Collider collider){
-      chargeToPosition = transform.position;
-      nav.isStopped = true;
-      transform.position = new Vector3(transform.position.x, 0.0f, 0.0f);
+    //   chargeToPosition = transform.position;
+    //   transform.position = new Vector3(transform.position.x, 0.0f, 0.0f);
       if (collider.gameObject.tag == "Player") {
         currentState = FSMState.Stunned;
         collider.gameObject.SendMessage("ReceiveDamage", damage);
