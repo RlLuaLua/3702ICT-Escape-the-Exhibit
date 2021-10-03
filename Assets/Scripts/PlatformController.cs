@@ -36,6 +36,9 @@ public class PlatformController : MonoBehaviour
     void UpdateMoveState() {
         if(Vector3.Distance(transform.position, moveTarget) == 0.0f) {
             action = Actions.None;
+            if (lever.gameObject.name == "Lever2") {
+                GameObject.Find("Activator").GetComponent<SwitchActivatorController>().canProceed = true;
+            }
         }
         else {
             transform.position = Vector3.MoveTowards(transform.position, moveTarget, Time.deltaTime);
