@@ -20,8 +20,8 @@ public class SwitchActivatorController : MonoBehaviour
 
     public bool canProceed = true;
     public LeverController lever;
-    protected float timeElapsed;
-    protected float interactionDuration;
+    protected float timeElapsed = 0.0f;
+    protected float interactionDuration = 1.0f;
 
     // Start is called before the first frame update
     void Start()
