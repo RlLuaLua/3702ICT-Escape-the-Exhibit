@@ -4,24 +4,36 @@ public class LeverController : Interactable
 {
     public GameObject platform;
     public GameObject handle;
-    public bool isOn;
-
-    void Start()
-    {
-        isOn = false;
+    public enum Source {
+        Player,
+        Activator
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        handle.transform.localRotation = Quaternion.Euler(0, 0, isOn ? -45 : 45);
-    }
+    public bool requireActivator = false;
+    public bool toggable = false;
+    public bool isOn = false;
+    public int timesInteracted = 0;
 
     public override void SpinInteract()
     {
-        isOn = !isOn;
-        platform.GetComponent<PlatformController>().Interact(gameObject);
-            
+        Interact(Source.Player);
+    }
+
+    public void ActivatorInteract() {
+        Interact(Source.Activator);
+    }
+
+    void Interact(Source source) {
+        if (!requireActivator && source == Source.Player || requireActivator && source == Source.Activator) {
+            if (toggable) {
+                isOn = !isOn;
+            }
+            if (!toggable && !isOn) {
+                isOn = true;
+            }
+            handle.transform.localRotation = Quaternion.Euler(0, 0, isOn ? -45 : 45);
+            timesInteracted++;
+            platform.GetComponent<PlatformController>().Interact(gameObject);
+        }
     }
 
     void OnDrawGizmos()
