@@ -2,41 +2,47 @@ using UnityEngine;
 
 public class PlatformController : MonoBehaviour
 {
-    protected bool spin = false;
-    protected bool move = false;
-    protected float moveDistance;
+    protected Actions action = Actions.None;
+    protected enum Actions {
+        Spin,
+        Move,
+        None
+    };
+    protected LeverController lever;
     protected Vector3 moveTarget;
     public float rotationSpeed = 50f;
 
-    // Update is called once per frame
+
     void Update()
     {
-        if (spin) {
-            transform.Rotate(transform.rotation.x, rotationSpeed * Time.deltaTime, transform.rotation.z);
-        }
-        if (move) {
-            if (!(Vector3.Distance(transform.position, moveTarget) == 0.0f)) {
-                transform.position = Vector3.MoveTowards(transform.position, moveTarget, Time.deltaTime);
-            }
-            else {
-                move = false;
-            }
+        switch (action) {
+            case Actions.Spin: UpdateSpinState(); break;
+            case Actions.Move: UpdateMoveState(); break;
+            case Actions.None: break;
+            default: Debug.Log("Unknown Action"); break;
         }
     }
 
     public void Interact(GameObject trigger) {
-        if (trigger.name == "Lever1")
-            Spin(trigger);
-        if (trigger.name == "Lever2")
-            Move(trigger);
+        lever = trigger.GetComponent<LeverController>();
+        if (lever.gameObject.name == "Lever1") {
+            action = lever.isOn ? Actions.Spin : Actions.None;
+        }
+        if (lever.gameObject.name == "Lever2" && lever.isOn && lever.timesInteracted == 1) {
+            moveTarget = new Vector3(transform.position.x, transform.position.y - 2.0f, transform.position.z);
+            action = Actions.Move;
+        }
     }
-    void Move(GameObject trigger) {
-        moveDistance = trigger.gameObject.GetComponent<LeverController>().isOn ? 2.0f : -2.0f;
-        moveTarget = new Vector3(transform.position.x, transform.position.y - moveDistance, transform.position.z);
-        move = true;
+    void UpdateMoveState() {
+        if(Vector3.Distance(transform.position, moveTarget) == 0.0f) {
+            action = Actions.None;
+        }
+        else {
+            transform.position = Vector3.MoveTowards(transform.position, moveTarget, Time.deltaTime);
+        }
     }
 
-    void Spin(GameObject trigger) {
-        spin = !spin;
+    void UpdateSpinState() {
+        transform.Rotate(transform.rotation.x, rotationSpeed * Time.deltaTime, transform.rotation.z);
     }
 }
