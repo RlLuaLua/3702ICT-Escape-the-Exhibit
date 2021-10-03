@@ -19,6 +19,9 @@ public class SwitchActivatorController : MonoBehaviour
     public float slopeForceRayLength = 2.0f;
 
     public bool canProceed = true;
+    public LeverController lever;
+    protected float timeElapsed;
+    protected float interactionDuration;
 
     // Start is called before the first frame update
     void Start()
@@ -40,15 +43,17 @@ public class SwitchActivatorController : MonoBehaviour
     void UpdateWaitState() {
         if(canProceed)
         {
-            if (currentWaypoint + 1 <= waypointList.Length) {
-                currentWaypoint++;
-            }
             currentState = FSMState.Move;
         }
     }
 
     void UpdateActivateState() {
-
+        if (timeElapsed >= interactionDuration) {
+            lever.gameObject.SendMessage("ActivatorInteract");
+            currentState = FSMState.Wait;
+            timeElapsed = 0.0f;
+        };
+        timeElapsed += Time.deltaTime;
     }
 
     void UpdateMoveState() {
@@ -63,7 +68,19 @@ public class SwitchActivatorController : MonoBehaviour
             }
             if (Mathf.Abs(transform.position.x - waypointList[currentWaypoint].transform.position.x) <= 0.05) {
                 canProceed = false;
+                if (currentWaypoint + 1 <= waypointList.Length) {
+                currentWaypoint++;
+                }
                 currentState = FSMState.Wait;
+            }
+        }
+    }
+
+    void OnTriggerEnter(Collider collider) {
+        lever = collider.gameObject.GetComponent<LeverController>();
+        if (!lever.isOn) {
+            if (collider.gameObject.tag == "Lever" && lever.requireActivator) {
+                currentState = FSMState.Activate;
             }
         }
     }
