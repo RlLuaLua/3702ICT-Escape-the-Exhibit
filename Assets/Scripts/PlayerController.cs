@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
         moveDirection = new Vector3(horizontal * moveSpeed, moveDirection.y, 0f);
         if(controller.isGrounded)//if the player is touching the ground
         {
-            moveDirection.y = Physics.gravity.y * gravityScale; //stops downward acceleration from increasing while on the ground
+            moveDirection.y = -1f; //stops downward acceleration from increasing while on the ground
             if(Input.GetButtonDown("Jump")) //player can only jump while grounded
             {
                 moveDirection.y += jumpForce;
