@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AttackerFSM : MonoBehaviour
 {
+    protected CharacterController controller;
     public enum FSMState
     {
         None,
@@ -17,8 +18,9 @@ public class AttackerFSM : MonoBehaviour
     //ranges for State Changes
     public float moveSpeed = 12.0f;
     public float chaseRange = 12.0f;
-    public float attackRange = 12.0f;
+    public float attackRange = 3.0f;
     public float health = 1f;
+    protected bool bDead;
 
     public float attackCoolDown;
 
@@ -31,16 +33,17 @@ public class AttackerFSM : MonoBehaviour
     {
         curState = FSMState.Patrol;
         bDead = false;
-
+        controller = GetComponent<CharacterController>();
+        Debug.Log("playerTransform.position");
         // Get the list of patrol points
-        pointList = GameObject.FindGameObjectsWithTag("PatrolPoint");
-        FindNextPoint();  // Set a random destination point first
+        //pointList = GameObject.FindGameObjectsWithTag("PatrolPoint");
 
         // Get the target (Player)
         GameObject objPlayer = GameObject.FindGameObjectWithTag("Player");
         playerTransform = objPlayer.transform;
+        
         if (!playerTransform)
-            print("Player doesn't exist.. Please add one with Tag named 'Player'");
+            Debug.Log("Player doesn't exist.. Please add one with Tag named 'Player'");
     }
 
     // Update is called once per frame
@@ -53,10 +56,11 @@ public class AttackerFSM : MonoBehaviour
             case FSMState.Chase: UpdateChaseState(); break;
             case FSMState.Attack: UpdateAttackState(); break;
         }
-
+        
         float playerDist = Vector3.Distance(transform.position, playerTransform.position);
-
-        if (health > 0) {
+        
+        if (health > 0)
+        {
             // Go to chase state if player is in range
             if (playerDist <= chaseRange && attackRange < playerDist)
             {
@@ -68,7 +72,7 @@ public class AttackerFSM : MonoBehaviour
                 curState = FSMState.Patrol;
             }
             // Enter attack state when inside attack range
-            else if (playerDist <= attackRange && stopRange < playerDist)
+            else if (playerDist <= attackRange)
             {
                 curState = FSMState.Attack;
             }
@@ -78,21 +82,37 @@ public class AttackerFSM : MonoBehaviour
         {
             curState = FSMState.Dead;
         }
+    }
 
-        //if hit by spinattack lose 1 health
-        public virtual void SpinInteract()
+    // Check the collision with the player
+    void OnCollisionEnter(Collision collision)
+    {
+        // Reduce health
+        if (collision.gameObject.tag == "Player")
         {
-            health-=1;
+            Debug.Log("1");
         }
+    }
+    //if hit by spinattack lose 1 health
+    public virtual void SpinInteract()
+    {
+        Debug.Log("hit");
+        health -= 1;
+    }
 
-        // Check the collision with the player
-        void OnCollisionEnter(Collision collision)
-        {
-            // Reduce health
-            if (collision.gameObject.tag == "Player")
-            {
-                
-            }
-        }
+    protected void UpdatePatrolState(){
+
+    }
+
+    protected void UpdateDeadState(){
+        Debug.Log("dead");
+    }
+
+    protected void UpdateChaseState(){
+
+    }
+
+    protected void UpdateAttackState(){
+
     }
 }
