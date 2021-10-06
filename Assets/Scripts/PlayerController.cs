@@ -44,6 +44,12 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
         }
 
+        //If character hits the underside of a block (collides with something above it) prevent sticking
+        if ((controller.collisionFlags & CollisionFlags.Above) != 0) {
+            if (moveDirection.y > 0) {
+                moveDirection.y = 0;
+            }
+        }
 
         //final movement direction for this frame   
         moveDirection.y += (Physics.gravity.y * gravityScale * Time.deltaTime);
