@@ -4,18 +4,9 @@ using UnityEngine;
 
 public class HealthController : MonoBehaviour
 {
-    public float max_health
-    {
-        get; private set;
-    }
-
-    public float cur_health
-    {
-        get; private set;
-    }
-
-    [SerializeField]
-    float start_health = 3;
+    public float max_health = 5;
+    public float cur_health;
+    public float start_health = 3;
 
     [SerializeField]
     float invulntimer;
@@ -26,7 +17,6 @@ public class HealthController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        max_health = 5;
         cur_health = start_health;
         invulntimer = 0;
     }
