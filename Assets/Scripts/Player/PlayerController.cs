@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         // Raycast to below the character to check if character is on ground as set isGrounded
         if(Physics.Raycast(transform.position, Vector3.down, 0.1f)) {
             isGrounded = true;
