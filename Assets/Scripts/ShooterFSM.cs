@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShooterFSM : Interactable
@@ -16,40 +14,31 @@ public class ShooterFSM : Interactable
 
     public FSMState curState;
     public GameObject[] waypointList;
+    private Vector3 moveDirection;
     public int currentWaypoint = 0;
     public float slopeForce = 5.0f;
     public float slopeForceRayLength = 2.0f;
-
-    //ranges for State Changes
     private float moveSpeed;
     public float patrolMoveSpeed = 3.0f;
     public float chaseMoveSpeed = 5.0f;
-    // public float attackMoveSpeed = 8.0f;
-    // public float attackJumpForce = 5.0f;
-    private Vector3 moveDirection;
 
     public float chaseRange = 5.0f;
     public float attackRange = 3.0f;
     public float health = 1f;
-    protected bool bDead;
+    public float damage = 1f;
 
-	public float shootRate = 3.0f;
-	protected float elapsedTime;
+    public float shootRate = 3.0f;
+    protected float elapsedTime;
 
-	public GameObject bullet;
-	public GameObject bulletSpawnPoint;
+    public GameObject bullet;
+    public GameObject bulletSpawnPoint;
 
-    // public float attackCoolDown;
-
-    protected Transform playerTransform;// Player Transform
-    protected Vector3 destPos; // Next destination position of the NPC Tank
-    protected GameObject[] pointList;
+    protected Transform playerTransform; // Player Transform
 
     // Start is called before the first frame update
     void Start()
     {
         curState = FSMState.Patrol;
-        bDead = false;
         elapsedTime = 0.0f;
         controller = GetComponent<CharacterController>();
 
@@ -95,13 +84,6 @@ public class ShooterFSM : Interactable
             curState = FSMState.Dead;
         }
 
-        // attackCoolDown -= Time.deltaTime;
-
-        // if (attackCoolDown < 0f)
-        // {
-        //     attackCoolDown = 0f;
-        // }
-
         elapsedTime += Time.deltaTime;
 
         Vector3 direction = playerTransform.position - transform.position;
@@ -134,7 +116,7 @@ public class ShooterFSM : Interactable
         // Reduce health
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("1");
+            playerTransform.gameObject.GetComponent<HealthController>().ReceiveDamage(damage);
         }
     }
     //if hit by spinattack lose 1 health
@@ -202,14 +184,15 @@ public class ShooterFSM : Interactable
     protected void UpdateShootState()
     {
         transform.LookAt(new Vector3(playerTransform.transform.position.x, transform.position.y, transform.position.z));
-        if (elapsedTime >= shootRate) {
-			if ((bulletSpawnPoint) & (bullet)) {
-            	// Shoot the bullet
-            	Instantiate(bullet, bulletSpawnPoint.transform.position, bulletSpawnPoint.transform.rotation);
-			}
+        if (elapsedTime >= shootRate)
+        {
+            if ((bulletSpawnPoint) & (bullet))
+            {
+                // Shoot the bullet
+                Instantiate(bullet, bulletSpawnPoint.transform.position, bulletSpawnPoint.transform.rotation);
+            }
             elapsedTime = 0.0f;
         }
-
     }
 
     public void OnDrawGizmos()
