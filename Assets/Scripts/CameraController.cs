@@ -8,10 +8,17 @@ public class CameraController : MonoBehaviour
 
     public Vector3 offset;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        offset = target.position - transform.position;
+    }
+
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = target.position + new Vector3(0, 1f, 0) - offset;
-        transform.LookAt(target);
+        transform.position = target.position - offset;
+
+        // transform.LookAt(target);
     }
 }
