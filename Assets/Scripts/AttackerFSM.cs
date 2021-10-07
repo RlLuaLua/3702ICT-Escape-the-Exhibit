@@ -129,9 +129,9 @@ public class AttackerFSM : Interactable
         /* If Sense animation has not been played (i.e. playerSeen is false), turn in direction of the player, play animation. 
            After the animation has played, set playerSeen to true and reset timeElapsed. 
            If Sense animation has been played, set moveSpeed to chaseSpeed and move character*/
+        transform.LookAt(new Vector3(playerTransform.transform.position.x, transform.position.y, transform.position.z));
         if (!animator.GetBool("playerSeen"))
         {
-            transform.LookAt(new Vector3(playerTransform.transform.position.x, transform.position.y, transform.position.z));
             animator.Play("Base Layer.Sense", -1);
             if (elapsedTime > animator.GetCurrentAnimatorStateInfo(0).length + animator.GetCurrentAnimatorStateInfo(0).normalizedTime)
             {
