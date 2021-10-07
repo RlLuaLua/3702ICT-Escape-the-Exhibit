@@ -4,20 +4,16 @@ using UnityEngine;
 
 public class HealthController : MonoBehaviour
 {
-    public float max_health = 5;
-    public float cur_health;
-    public float start_health = 3;
-
-    [SerializeField]
+    public float max_health;
+    [SerializeField] float cur_health;
     float invulntimer;
-
     public float gracePeriod;
     public bool alive = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        cur_health = start_health;
+        cur_health = max_health;
         invulntimer = 0;
     }
 
@@ -44,9 +40,6 @@ public class HealthController : MonoBehaviour
 
         cur_health -= damageAmount;
         invulntimer += gracePeriod;//set timer for damage invulnerability
-
-        Mathf.Clamp(cur_health, 0, max_health);
-        
         Debug.Log(cur_health);
     }
 
@@ -54,7 +47,5 @@ public class HealthController : MonoBehaviour
     {
         Debug.Log("Adding health " + healthAmount);
         cur_health += healthAmount;
-
-        Mathf.Clamp(cur_health, 0, max_health);
     }
 }
