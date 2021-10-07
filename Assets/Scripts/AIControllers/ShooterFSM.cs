@@ -3,6 +3,9 @@ using UnityEngine;
 public class ShooterFSM : Interactable
 {
     protected CharacterController controller;
+    protected Animator animator;
+    protected Transform playerTransform; // Player Transform
+
     public enum FSMState
     {
         None,
@@ -13,6 +16,8 @@ public class ShooterFSM : Interactable
     }
 
     public FSMState curState;
+
+    // Movement
     public GameObject[] waypointList;
     private Vector3 moveDirection;
     public int currentWaypoint = 0;
@@ -22,25 +27,25 @@ public class ShooterFSM : Interactable
     public float patrolMoveSpeed = 3.0f;
     public float chaseMoveSpeed = 5.0f;
 
+    // State Ranges
     public float chaseRange = 5.0f;
     public float attackRange = 3.0f;
+
+    // Health
     public float health = 1f;
+
+    // Attack
     public float damage = 1f;
-
-    public float shootRate = 3.0f;
-    protected float elapsedTime;
-
     public GameObject bullet;
     public GameObject bulletSpawnPoint;
 
-    protected Transform playerTransform; // Player Transform
 
     // Start is called before the first frame update
     void Start()
     {
         curState = FSMState.Patrol;
-        elapsedTime = 0.0f;
         controller = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
 
         // Get the target (Player)
         GameObject objPlayer = GameObject.FindGameObjectWithTag("Player");
@@ -83,69 +88,18 @@ public class ShooterFSM : Interactable
         {
             curState = FSMState.Dead;
         }
-
-        elapsedTime += Time.deltaTime;
-
-        Vector3 direction = playerTransform.position - transform.position;
-        direction.y = 0;
-        direction.z = 0;
-
-        Debug.DrawRay(transform.position, direction);
-    }
-
-    private bool CanSeePlayer()
-    {
-        RaycastHit hit;
-        Vector3 direction = playerTransform.position - transform.position;
-        direction.y = 0;
-        direction.z = 0;
-        return Physics.Raycast(transform.position, direction, out hit) && hit.transform.tag == "Player";
-    }
-
-    private void MoveForward()
-    {
-        moveDirection = new Vector3(transform.forward.x * moveSpeed, moveDirection.y, 0f);
-        moveDirection.y += (Physics.gravity.y * Time.deltaTime);
-        controller.Move(moveDirection * Time.deltaTime);
-
-
-    }
-    // Check the collision with the player
-    void OnCollisionEnter(Collision collision)
-    {
-        // Reduce health
-        if (collision.gameObject.tag == "Player")
-        {
-            playerTransform.gameObject.GetComponent<HealthController>().ReceiveDamage(damage);
-        }
-    }
-    //if hit by spinattack lose 1 health
-    public override void SpinInteract()
-    {
-        Debug.Log("hit");
-        health -= 1;
     }
 
     protected void UpdatePatrolState()
     {
-        //set move speed to patrol move speed
-        moveSpeed = patrolMoveSpeed;
+        animator.Play("Walk", -1);
+        
+        moveSpeed = patrolMoveSpeed; //set move speed to patrol move speed
         transform.LookAt(new Vector3(waypointList[currentWaypoint].transform.position.x, transform.position.y, transform.position.z));
-
-        // * Raycast from controller to ground to determine if on slope. If is on slope, increase downwards force to stop bumping down slope
-        RaycastHit hit;
-        Physics.Raycast(transform.position, Vector3.down, out hit, controller.height / 2 * slopeForceRayLength);
-
-        if (hit.normal != Vector3.up)
-        {
-            controller.Move(Vector3.down * controller.height / 2 * slopeForce * Time.deltaTime);
-        }
-
         if (Mathf.Abs(transform.position.x - waypointList[currentWaypoint].transform.position.x) <= 0.05)
         {
             if (currentWaypoint + 1 < waypointList.Length)
             {
-                Debug.Log("called");
                 currentWaypoint++;
             }
             else
@@ -153,47 +107,77 @@ public class ShooterFSM : Interactable
                 currentWaypoint = 0;
             }
         }
-
         MoveForward();
-    }
-
-    protected void UpdateDeadState()
-    {
-        moveSpeed = 0f;
-        Destroy(gameObject, 1.5f);
     }
 
     protected void UpdateChaseState()
     {
+        animator.Play("Run", -1);
         //set move speed to chase move speed
         moveSpeed = chaseMoveSpeed;
         transform.LookAt(new Vector3(playerTransform.transform.position.x, transform.position.y, transform.position.z));
-
-        // * Raycast from controller to ground to determine if on slope. If is on slope, increase downwards force to stop bumping down slope
-        RaycastHit hit;
-        Physics.Raycast(transform.position, Vector3.down, out hit, controller.height / 2 * slopeForceRayLength);
-
-        if (hit.normal != Vector3.up)
-        {
-            controller.Move(Vector3.down * controller.height / 2 * slopeForce * Time.deltaTime);
-        }
-
         MoveForward();
     }
 
     protected void UpdateShootState()
     {
         transform.LookAt(new Vector3(playerTransform.transform.position.x, transform.position.y, transform.position.z));
-        if (elapsedTime >= shootRate)
-        {
-            if ((bulletSpawnPoint) & (bullet))
-            {
-                // Shoot the bullet
-                Instantiate(bullet, bulletSpawnPoint.transform.position, bulletSpawnPoint.transform.rotation);
-            }
-            elapsedTime = 0.0f;
+        if (Mathf.Abs((transform.position.y - playerTransform.position.y)) > 0.05) {
+            animator.Play("Taunt", -1);
+        }
+        else {
+            animator.Play("Shoot", -1);
         }
     }
+    protected void UpdateDeadState()
+    {
+        animator.Play("Die", -1);
+    }
+
+    void Shoot() {
+        if (curState == FSMState.Shoot) {
+            if (bulletSpawnPoint & bullet)
+            {
+                Instantiate(bullet, bulletSpawnPoint.transform.position, bulletSpawnPoint.transform.rotation);
+            }
+        }
+    }
+
+        private bool CanSeePlayer()
+    {
+        RaycastHit hit;
+        Vector3 direction = new Vector3(playerTransform.position.x, playerTransform.position.y + 0.5f, 0) - new Vector3(transform.position.x, transform.position.y + 0.5f, 0);
+        direction.z = 0;
+        bool canSeePlayer = Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), direction, out hit) && hit.collider.gameObject.tag == "Player";
+        Debug.DrawRay(transform.position + new Vector3(0, 0.5f, 0), direction, Color.cyan);
+        return canSeePlayer;
+    }
+
+    private void MoveForward()
+    {
+        moveDirection = new Vector3(transform.forward.x * moveSpeed, moveDirection.y, 0f);
+        moveDirection.y += (Physics.gravity.y * Time.deltaTime);
+        controller.Move(moveDirection * Time.deltaTime);
+        RaycastHit hit;
+        Physics.Raycast(transform.position, Vector3.down, out hit, controller.height / 2 * 2.0f);
+        if (hit.normal != Vector3.up)
+        {
+            controller.Move(Vector3.down * controller.height / 2 * 5.0f * Time.deltaTime);
+        }
+    }
+
+    // If hit by spinattack lose 1 health
+    public override void SpinInteract()
+    {
+        Debug.Log("hit");
+        health -= 1;
+    }
+
+    // Animation Event at end of "Die" animation triggers this GameObject to be destroyed
+    void Destroy() {
+        Destroy(gameObject, 1.5f);
+    }
+
 
     public void OnDrawGizmos()
     {
@@ -207,12 +191,6 @@ public class ShooterFSM : Interactable
         {
             Gizmos.color = Color.cyan;
             Gizmos.DrawWireSphere(waypoint.transform.position, 0.5f);
-        }
-
-        if (curState == FSMState.Chase || curState == FSMState.Shoot)
-        {
-            Gizmos.color = Color.blue;
-            Gizmos.DrawLine(transform.position, playerTransform.position);
         }
     }
 }
