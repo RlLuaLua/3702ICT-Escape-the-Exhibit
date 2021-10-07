@@ -5,8 +5,7 @@ using UnityEngine;
 public class HealthController : MonoBehaviour
 {
     public float max_health;
-    float cur_health;
-    [SerializeField]
+    [SerializeField] float cur_health;
     float invulntimer;
     public float gracePeriod;
     public bool alive = true;
