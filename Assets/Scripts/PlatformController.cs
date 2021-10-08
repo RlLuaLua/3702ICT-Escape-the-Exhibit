@@ -37,7 +37,7 @@ public class PlatformController : MonoBehaviour
         if(Vector3.Distance(transform.position, moveTarget) == 0.0f) {
             action = Actions.None;
             if (lever.gameObject.name == "Lever2") {
-                GameObject.Find("Activator").GetComponent<SwitchActivatorController>().canProceed = true;
+                GameObject.Find("Golem").GetComponent<SwitchActivatorController>().canProceed = true;
             }
         }
         else {

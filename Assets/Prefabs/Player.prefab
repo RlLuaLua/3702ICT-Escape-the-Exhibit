@@ -191,12 +191,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 549932991310035447}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ffd822d0bc52de459ff380fed063fa6, type: 3}
+  m_Script: {fileID: 11500000, guid: 1706a6399a2e0374eabb04bf07246d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3.5
-  jumpForce: 6
-  turnTime: 0.1
+  jumpForce: 16
+  turnTime: 0.02
   controller: {fileID: 0}
   gravityScale: 1
 --- !u!114 &549932991310035440
@@ -211,10 +211,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc6904cb7919144a8f08cfe52365469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  max_health: 5
+  cur_health: 0
   start_health: 3
   invulntimer: 0
   gracePeriod: 3
   alive: 1
+  healthText: {fileID: 0}
 --- !u!114 &549932991310035445
 MonoBehaviour:
   m_ObjectHideFlags: 0

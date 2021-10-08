@@ -9,7 +9,7 @@ public class SpikeScript : MonoBehaviour
 
     void OnStart()
     {
-        player = other.gameObject.GetComponent<HealthController>();
+        // player = other.gameObject.GetComponent<HealthController>();
     }
 
     // Update is called once per frame

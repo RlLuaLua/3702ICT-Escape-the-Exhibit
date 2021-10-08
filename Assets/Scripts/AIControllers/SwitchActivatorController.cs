@@ -3,6 +3,8 @@ using UnityEngine;
 public class SwitchActivatorController : MonoBehaviour
 {
     protected CharacterController controller;
+
+    protected Animator animator;
     public enum FSMState
     {
         Wait,
@@ -27,6 +29,7 @@ public class SwitchActivatorController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
         currentState = FSMState.Move;
     }
 
@@ -41,6 +44,8 @@ public class SwitchActivatorController : MonoBehaviour
     }
 
     void UpdateWaitState() {
+        currentState = FSMState.Wait;
+        animator.Play("Idle", -1);
         if(canProceed)
         {
             currentState = FSMState.Move;
@@ -48,16 +53,16 @@ public class SwitchActivatorController : MonoBehaviour
     }
 
     void UpdateActivateState() {
-        if (timeElapsed >= interactionDuration) {
-            lever.gameObject.SendMessage("ActivatorInteract");
-            currentState = FSMState.Wait;
-            timeElapsed = 0.0f;
-        };
-        timeElapsed += Time.deltaTime;
+        animator.Play("Activate", -1);
+    }
+
+    void ActivateSwitch() {
+        lever.ActivatorInteract();
     }
 
     void UpdateMoveState() {
         if(canProceed) {
+            animator.Play("Walk", -1);
             transform.LookAt(new Vector3(waypointList[currentWaypoint].transform.position.x, transform.position.y, transform.position.z));
             controller.SimpleMove(transform.forward * speed);
             // * Raycast from controller to ground to determine if on slope. If is on slope, increase downwards force to stop bumping down slope

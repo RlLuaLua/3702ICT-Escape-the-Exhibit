@@ -124,11 +124,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3909376681746274415}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f024d5cfbfdcb45388b2e78643cb2027, type: 3}
+  m_Script: {fileID: 11500000, guid: 6507cc7bb194b464d9687ab83548c589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handle: {fileID: 4125323388872744617}
+  platform: {fileID: 0}
+  handle: {fileID: 0}
+  requireActivator: 0
+  toggable: 0
   isOn: 0
+  timesInteracted: 0
 --- !u!65 &-8555217706031393630
 BoxCollider:
   m_ObjectHideFlags: 0
