@@ -31,8 +31,8 @@ public class HealthController : MonoBehaviour
         {
             invulntimer = 0;
         }
-
-        healthText.text = "Health: " + cur_health.ToString();
+        if (healthText != null)
+            healthText.text = "Health: " + cur_health.ToString();
     }
 
     public void ReceiveDamage( float damageAmount )
