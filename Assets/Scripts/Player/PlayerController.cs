@@ -33,9 +33,16 @@ public class PlayerController : MonoBehaviour
             velocity.y = -0.5f;
             animator.SetBool("isJumping", false);
         }
+
+        
         // Find which direction user is pressing on left or right using AD or arrow keys
         float horizontal = Input.GetAxisRaw("Horizontal");
         Vector3 direction = new Vector3(horizontal, 0, 0).normalized;
+        if ((controller.collisionFlags & CollisionFlags.Above) != 0) {
+            if (direction.y > 0) {
+                direction.y = 0;
+            }
+        }
         if (direction.magnitude >= 0.1f) {
             animator.SetBool("isWalking", true);
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg, ref turnVelocity, 0.1f) ;

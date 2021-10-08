@@ -3,6 +3,8 @@ using UnityEngine;
 public class PatrollerController : MonoBehaviour
 {
     protected CharacterController controller;
+    protected Animator animator;
+    protected GameObject player;
     public enum FSMState
     {
         Patrol,
@@ -25,6 +27,9 @@ public class PatrollerController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        Physics.IgnoreCollision(player.GetComponent<Collider>(), transform.GetComponent<Collider>());
         currentState = FSMState.Patrol;
     }
 
@@ -38,6 +43,8 @@ public class PatrollerController : MonoBehaviour
     }
 
     protected void UpdatePatrolState() {
+        animator.Play("Fly", -1);
+        currentState = FSMState.Patrol;
         if(Mathf.Abs(transform.position.x - waypointList[currentWaypoint].transform.position.x) <= 0.5f) {
             currentWaypoint++;
             if (currentWaypoint >= waypointList.Length) {
@@ -55,29 +62,17 @@ public class PatrollerController : MonoBehaviour
     }
 
     protected void UpdateDeactivateState() {
-        if (timeElapsed >= interactionDuration) {
-            lever.gameObject.SendMessage("SpinInteract");
-            currentState = FSMState.Patrol;
-            timeElapsed = 0.0f;
-        };
-        timeElapsed += Time.deltaTime;
+        animator.Play("Deactivate", -1);
+    }
 
+    void Deactivate() {
+        lever.PatrollerInteract();
     }
 
     void OnTriggerEnter(Collider collider){
         lever = collider.gameObject.GetComponent<LeverController>();
         if (collider.gameObject.tag == "Lever" && lever.isOn == true) {
             currentState = FSMState.Deactivate;
-        }
-    }
-
-    void OnControllerColliderHit(ControllerColliderHit hit) {
-        if (hit.gameObject.tag == "Player") {
-            transform.position = new Vector3(transform.position.x, transform.position.y, 0.0f);
-            currentWaypoint++;
-            if (currentWaypoint >= waypointList.Length) {
-                currentWaypoint = 0;
-            }
         }
     }
 

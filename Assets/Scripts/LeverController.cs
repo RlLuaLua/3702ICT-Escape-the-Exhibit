@@ -6,7 +6,8 @@ public class LeverController : Interactable
     public GameObject handle;
     public enum Source {
         Player,
-        Activator
+        Activator,
+        Patroller
     }
     public bool requireActivator = false;
     public bool toggable = false;
@@ -22,8 +23,12 @@ public class LeverController : Interactable
         Interact(Source.Activator);
     }
 
+    public void PatrollerInteract() {
+        Interact(Source.Patroller);
+    }
+
     void Interact(Source source) {
-        if (!requireActivator && source == Source.Player || requireActivator && source == Source.Activator) {
+        if (!requireActivator && source == Source.Player || requireActivator && source == Source.Activator || source == Source.Patroller) {
             if (toggable) {
                 isOn = !isOn;
             }
