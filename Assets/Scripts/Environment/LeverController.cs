@@ -3,6 +3,7 @@ using UnityEngine;
 public class LeverController : Interactable
 {
     public GameObject[] platforms;
+    
     public GameObject handle;
     public enum Source {
         Player,
@@ -39,7 +40,7 @@ public class LeverController : Interactable
             timesInteracted++;
             
             foreach(GameObject platform in platforms){
-                platform.GetComponent<PlatformController>().Interact(gameObject);
+                platform.GetComponent<LeverMove>().Interact();
             }
         }
     }
