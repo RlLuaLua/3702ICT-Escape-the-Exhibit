@@ -66,10 +66,6 @@ public class AttackerFSM : Interactable
 
         if (health > 0)
         {
-            // If not in attack state, set isAttacking animation bool to false
-            if (curState != FSMState.Attack) {
-                animator.SetBool("isAttacking", false);
-            }
             // Go to chase state if player is in range
             if (playerDist <= chaseRange && playerDist > attackRange)
             {
@@ -132,8 +128,8 @@ public class AttackerFSM : Interactable
         transform.LookAt(new Vector3(playerTransform.transform.position.x, transform.position.y, transform.position.z));
         if (!animator.GetBool("playerSeen"))
         {
-            animator.Play("Base Layer.Sense", -1);
-            if (elapsedTime > animator.GetCurrentAnimatorStateInfo(0).length + animator.GetCurrentAnimatorStateInfo(0).normalizedTime)
+            animator.Play("Sense", -1);
+            if (elapsedTime > animator.GetCurrentAnimatorStateInfo(0).length)
             {
                 animator.SetBool("playerSeen", true);
                 elapsedTime = 0;
@@ -150,7 +146,7 @@ public class AttackerFSM : Interactable
     protected void UpdateAttackState()
     {
         transform.LookAt(new Vector3(playerTransform.transform.position.x, transform.position.y, transform.position.z));
-        animator.SetBool("isAttacking", true);
+        animator.Play("Attack", -1);
     }
 
     protected void UpdateDeadState()
@@ -162,7 +158,7 @@ public class AttackerFSM : Interactable
 
     protected void Move()
     {
-        animator.Play("Base Layer.WalkFWD", -1);
+        animator.Play("Walk", -1);
         moveDirection = new Vector3(transform.forward.x * moveSpeed, moveDirection.y, 0f);
         moveDirection.y += (Physics.gravity.y * Time.deltaTime);
         controller.Move(moveDirection * Time.deltaTime);

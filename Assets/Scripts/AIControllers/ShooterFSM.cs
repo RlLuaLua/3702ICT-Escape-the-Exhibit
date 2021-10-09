@@ -74,11 +74,11 @@ public class ShooterFSM : Interactable
             {
                 curState = FSMState.Shoot;
             }
-            else if (CanSeePlayer() && playerDist <= chaseRange && playerDist >= attackRange)
+            else if (CanSeePlayer() && !isAnimationStatePlaying("Shoot") && playerDist <= chaseRange && playerDist >= attackRange) 
             {
                 curState = FSMState.Chase;
             }
-            else if (!CanSeePlayer() || playerDist > chaseRange)
+            else if (!isAnimationStatePlaying("Shoot") && (!CanSeePlayer() || playerDist > chaseRange))
             {
                 curState = FSMState.Patrol;
             }
@@ -122,7 +122,7 @@ public class ShooterFSM : Interactable
     protected void UpdateShootState()
     {
         transform.LookAt(new Vector3(playerTransform.transform.position.x, transform.position.y, transform.position.z));
-        if (Mathf.Abs((transform.position.y - playerTransform.position.y)) > 0.05) {
+        if (Mathf.Abs((transform.position.y - playerTransform.position.y)) > 0.05 && !isAnimationStatePlaying("Shoot")) {
             animator.Play("Taunt", -1);
         }
         else {
@@ -178,6 +178,13 @@ public class ShooterFSM : Interactable
         Destroy(gameObject, 1.5f);
     }
 
+    bool isAnimationStatePlaying(string stateName)
+    {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName(stateName) && animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
+            return true;
+        else
+            return false;
+    }
 
     public void OnDrawGizmos()
     {
