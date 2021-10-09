@@ -67,7 +67,7 @@ public class AttackerFSM : Interactable
         if (health > 0)
         {
             // Go to chase state if player is in range
-            if (playerDist <= chaseRange && playerDist > attackRange)
+            if (CanSeePlayer() && playerDist <= chaseRange && playerDist > attackRange)
             {
                 curState = FSMState.Chase;
             }
@@ -154,6 +154,16 @@ public class AttackerFSM : Interactable
         animator.Play("Die", -1);
         moveSpeed = 0f;
         Destroy(gameObject, 1.5f);
+    }
+
+    private bool CanSeePlayer()
+    {
+        RaycastHit hit;
+        Vector3 direction = new Vector3(playerTransform.position.x, 0.5f, 0) - new Vector3(transform.position.x, transform.position.y + 0.5f, 0);
+        direction.z = 0;
+        bool canSeePlayer = Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), direction, out hit) && hit.collider.gameObject.tag == "Player";
+        Debug.DrawRay(transform.position + new Vector3(0, 0.5f, 0), direction, Color.cyan);
+        return canSeePlayer;
     }
 
     protected void Move()
