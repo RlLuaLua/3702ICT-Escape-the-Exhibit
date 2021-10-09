@@ -6,18 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Attacker.unity
-    guid: 5f3907d39dd4f4217bfc4590b695ede3
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/Navigation/MainMenu.unity
     guid: 77369d4b763b245708ae066d2d1fcb9f
   - enabled: 1
-    path: Assets/Scenes/AustinScene1.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/Navigation/Help.unity
+    guid: 9fd7a86d9d9d8492d993ef18e914d221
   - enabled: 1
-    path: Assets/Scenes/AustinScene2.unity
-    guid: 32281d262b4d646f48c0c4d6c9a2d655
-  - enabled: 1
-    path: Assets/Scenes/Credits.unity
+    path: Assets/Scenes/Navigation/Credits.unity
     guid: 70eb1b5dcc7b34883a1c40e0b7ab2821
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: 76e756c24080344fa95e0f04ea7e604f
   m_configObjects: {}

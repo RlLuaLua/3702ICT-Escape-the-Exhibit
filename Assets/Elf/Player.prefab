@@ -819,6 +819,8 @@ GameObject:
   - component: {fileID: 4021014908493097560}
   - component: {fileID: 4021014908493097563}
   - component: {fileID: 4021014908493097562}
+  - component: {fileID: 2597335426360529598}
+  - component: {fileID: 345854960497617718}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -895,6 +897,41 @@ MonoBehaviour:
   turnVelocity: 1
   velocity: {x: 0, y: 0, z: 0}
   isGrounded: 0
+--- !u!114 &2597335426360529598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4021014908493097565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc6904cb7919144a8f08cfe52365469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  max_health: 5
+  cur_health: 0
+  start_health: 3
+  invulntimer: 0
+  gracePeriod: 0
+  alive: 1
+  healthText: {fileID: 0}
+--- !u!114 &345854960497617718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4021014908493097565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0e552f0d8865d146bed63e5c1465fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpinRange: 2
+  interactable:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &4021014908525137376
 GameObject:
   m_ObjectHideFlags: 0
