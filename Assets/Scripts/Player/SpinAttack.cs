@@ -7,24 +7,34 @@ public class SpinAttack : MonoBehaviour
 
     public float SpinRange;
     public LayerMask interactable;
+    protected Animator animator;
+
+    void Start() {
+        animator = GetComponent<Animator>();
+    }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            animator.SetBool("isSpinning", true);
             Spin();
         }
     }
     
     void Spin()
     {
-        Collider[] hitColliders = Physics.OverlapBox(gameObject.transform.position, transform.localScale * 2, Quaternion.identity, interactable);
+        Collider[] hitColliders = Physics.OverlapBox(transform.position, transform.localScale * 2, Quaternion.identity, interactable);
 
         foreach(Collider hittable in hitColliders)
         {
             Debug.Log("Hit: " + hittable.name);
             hittable.GetComponent<Interactable>().SpinInteract();
         }
+    }
+
+    void stopSpinAnimation() {
+        animator.SetBool("isSpinning", false);
     }
 
     void OnDrawGizmos()
