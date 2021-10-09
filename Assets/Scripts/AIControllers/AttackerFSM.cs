@@ -92,6 +92,9 @@ public class AttackerFSM : Interactable
         {
             curState = FSMState.Attack;
         }
+        if (collider.gameObject.tag == "Side") {
+            if (currentWaypoint + 1 < waypointList.Length) { currentWaypoint++; } else { currentWaypoint = 0; }
+        }
     }
     // If hit by Spin Attack, lose 1 health
     public override void SpinInteract()
