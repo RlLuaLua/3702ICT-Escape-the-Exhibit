@@ -37,12 +37,16 @@ public class PlatformController : MonoBehaviour
         if(Vector3.Distance(transform.position, moveTarget) == 0.0f) {
             action = Actions.None;
             if (lever.gameObject.name == "Lever2") {
-                GameObject.Find("Golem").GetComponent<SwitchActivatorController>().canProceed = true;
+                setActivatorCanProceed();
             }
         }
         else {
             transform.position = Vector3.MoveTowards(transform.position, moveTarget, Time.deltaTime);
         }
+    }
+
+    void setActivatorCanProceed() {
+        GameObject.Find("Activator").GetComponentInChildren<SwitchActivatorController>().canProceed = true;
     }
 
     void UpdateSpinState() {
