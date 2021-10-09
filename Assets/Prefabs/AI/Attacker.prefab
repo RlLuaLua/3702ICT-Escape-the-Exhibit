@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 594036542502243196}
   m_Layer: 3
   m_Name: Model
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -335,7 +335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 594036543142937163}
   - component: {fileID: 594036543142937156}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +467,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 594036543908239915}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Waypoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,7 +500,7 @@ GameObject:
   m_Component:
   - component: {fileID: 594036544117187168}
   - component: {fileID: 594036544117187169}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,7 +574,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 594036544199482532}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Attacker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
