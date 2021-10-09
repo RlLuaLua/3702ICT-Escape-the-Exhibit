@@ -28,6 +28,7 @@ public class WallBreakerController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        controller.detectCollisions = false;
         animator = GetComponent<Animator>();
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         player = playerObject.transform;
