@@ -132,6 +132,7 @@ public class ShooterFSM : Interactable
     protected void UpdateDeadState()
     {
         animator.Play("Die", -1);
+        Physics.IgnoreCollision(GameObject.FindGameObjectWithTag("Player").GetComponent<Collider>(), transform.GetComponent<Collider>());
     }
 
     void Shoot() {

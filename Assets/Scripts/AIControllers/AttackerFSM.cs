@@ -152,7 +152,7 @@ public class AttackerFSM : Interactable
     protected void UpdateDeadState()
     {
         animator.Play("Die", -1);
-        moveSpeed = 0f;
+        Physics.IgnoreCollision(GameObject.FindGameObjectWithTag("Player").GetComponent<Collider>(), transform.GetComponent<Collider>());
         Destroy(gameObject, 1.5f);
     }
 

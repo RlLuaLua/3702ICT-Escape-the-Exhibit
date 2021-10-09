@@ -94,6 +94,7 @@ public class WallBreakerController : MonoBehaviour
 
     void UpdateDefeatState() {
         animator.Play("Die", -1);
+        Physics.IgnoreCollision(GameObject.FindGameObjectWithTag("Player").GetComponent<Collider>(), transform.GetComponent<Collider>());
     }
 
     // Check the collision with the player
