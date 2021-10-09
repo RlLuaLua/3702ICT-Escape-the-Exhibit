@@ -56,7 +56,9 @@ public class PlayerController : MonoBehaviour
             velocity.y = Mathf.Sqrt(1.0f * -2.0f * Physics.gravity.y);
             animator.SetBool("isJumping", true);
         }
-        velocity.y += Physics.gravity.y * Time.deltaTime;
+        if (!isGrounded) {
+            velocity.y += Physics.gravity.y * Time.deltaTime;
+        }
         controller.Move(velocity * Time.deltaTime);
     }
 }
