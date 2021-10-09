@@ -8,6 +8,7 @@ TagManager:
   - WallBreaker
   - Breakable_Wall
   - Lever
+  - Enemy
   layers:
   - Default
   - TransparentFX
