@@ -108,6 +108,11 @@ public class WallBreakerController : MonoBehaviour
         if (collider.gameObject.tag == "Breakable_Wall") {
             currentState = FSMState.Defeat;
         }
+        if (collider.gameObject.tag == "Side")
+        {
+            currentState = FSMState.Stunned;
+        }
+        
     }
 
     // Raycast from controller to ground to determine if on slope. If is on slope, increase downwards force to smooth movement down slope
