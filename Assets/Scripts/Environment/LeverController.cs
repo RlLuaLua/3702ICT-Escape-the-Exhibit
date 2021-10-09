@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class LeverController : Interactable
 {
-    public GameObject platform;
+    public GameObject[] platforms;
     public GameObject handle;
     public enum Source {
         Player,
@@ -37,12 +37,17 @@ public class LeverController : Interactable
             }
             handle.transform.localRotation = Quaternion.Euler(0, 0, isOn ? -45 : 45);
             timesInteracted++;
-            platform.GetComponent<PlatformController>().Interact(gameObject);
+            
+            foreach(GameObject platform in platforms){
+                platform.GetComponent<PlatformController>().Interact(gameObject);
+            }
         }
     }
 
     void OnDrawGizmos()
     {
-        Gizmos.DrawLine(transform.position, platform.transform.position);
+        foreach(GameObject platform in platforms){
+            Gizmos.DrawLine(transform.position, platform.transform.position);
+        }
     }
 }
