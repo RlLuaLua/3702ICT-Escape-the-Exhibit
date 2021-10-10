@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
         }
         animator.SetBool("isGrounded", isGrounded);
 
-        // If grounded, reset y velocity and set animation bool for isJumping to false
+        // If grounded, reset y direction and set animation bool for isJumping to false
         if (isGrounded) {
             direction.y = -0.5f;
             animator.SetBool("isJumping", false);
@@ -45,6 +45,8 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isWalking", false);
         }
 
+        // If W is pressed down and player is on ground then jump by adding jumpForce to y direction
+        // and set isJumping animation to true
         if(Input.GetKeyDown(KeyCode.W) && isGrounded) {
             direction.y += jumpForce;
             animator.SetBool("isJumping", true);
@@ -64,12 +66,8 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        // Pulls player back to ground each frame
         direction.y += Physics.gravity.y * Time.deltaTime;
         controller.Move(direction * Time.deltaTime);
-    }
-
-    void OnControllerColliderHit(ControllerColliderHit hit) {
-        if ((controller.collisionFlags & CollisionFlags.Above) != 0)
-            Debug.Log(hit.gameObject.name);
     }
 }

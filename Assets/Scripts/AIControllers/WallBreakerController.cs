@@ -67,9 +67,7 @@ public class WallBreakerController : MonoBehaviour
         transform.LookAt(new Vector3(chargeToPosition.x, transform.position.y, 0));
         if(!chargeStarted) {
             chargeStarted = true;
-            print(Vector3.Distance(transform.position, player.position));
             float over = Mathf.Sign(Vector3.Dot(transform.TransformDirection(Vector3.forward), new Vector3(player.position.x, 0, 0) - new Vector3(transform.position.x, 0, 0)));
-            print(over);
             chargeToPosition = new Vector3(player.position.x + over * 2.0f, transform.position.y, 0);
         }
         if(Vector3.Distance(transform.position, chargeToPosition) <= 0.5f) {

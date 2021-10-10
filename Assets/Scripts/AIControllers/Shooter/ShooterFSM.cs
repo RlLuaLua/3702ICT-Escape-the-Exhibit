@@ -67,8 +67,17 @@ public class ShooterFSM : Interactable
             case FSMState.Shoot: UpdateShootState(); break;
         }
 
+        // Check distance between player and this object
         float playerDist = Vector3.Distance(transform.position, playerTransform.position);
 
+        /* If health is greater than 0:
+            - If in line of sight and within chase and attack distance then enter Shoot state
+            - Else if in line of sight, shoot animation is not playing, 
+              player is inside chase range but outside attack range then enter Chase state
+            - If Shoot animation is not playing and either not in line of sight or outside chase range
+              then enter Patrol state
+            If health is less than or equal to 0, enter Dead state
+        */
         if (health > 0)
         {
             if (CanSeePlayer() && playerDist <= chaseRange && playerDist <= attackRange)
@@ -93,9 +102,13 @@ public class ShooterFSM : Interactable
 
     protected void UpdatePatrolState()
     {
-        animator.Play("Walk", -1);
+        animator.Play("Walk", -1); // Start playing Walk animation on the first layer it is found on
         moveSpeed = patrolMoveSpeed; //set move speed to patrol move speed
+        /* Rotate to look at current waypoint, keeping the same y and z position*/
         transform.LookAt(new Vector3(waypointList[currentWaypoint].transform.position.x, transform.position.y, transform.position.z));
+        /* If within 0.05 of current waypoint x position, if not end of waypoint list go to next in array
+           else go to start of array
+        */
         if (Mathf.Abs(transform.position.x - waypointList[currentWaypoint].transform.position.x) <= 0.05)
         {
             if (currentWaypoint + 1 < waypointList.Length)
@@ -107,6 +120,10 @@ public class ShooterFSM : Interactable
                 currentWaypoint = 0;
             }
         }
+
+        /* If will be touching ground then move forwards, otherwise go to start or end point depending
+           on current target
+        */
         if (GetComponent<EdgeDetection>().isTouching) {
             MoveForward();
         }
@@ -124,15 +141,15 @@ public class ShooterFSM : Interactable
 
     protected void UpdateChaseState()
     {
+        /* If will be touching ground in 0.05f then: */
         if (transform.GetComponent<EdgeDetection>().isTouching) {
-            animator.Play("Run", -1);
-            //set move speed to chase move speed
-            moveSpeed = chaseMoveSpeed;
+            animator.Play("Run", -1); // Play Run animation on first layer it is found on
+            moveSpeed = chaseMoveSpeed; //set move speed to chase move speed
             transform.LookAt(new Vector3(playerTransform.transform.position.x, transform.position.y, transform.position.z));
             MoveForward();
         }
         else {
-            animator.Play("Taunt", -1);
+            animator.Play("Taunt", -1); // Play Taunt animation on first layer it is found on
         }
     }
 
@@ -154,7 +171,7 @@ public class ShooterFSM : Interactable
 
     void Shoot() {
         if (curState == FSMState.Shoot) {
-            if (bulletSpawnPoint & bullet)
+            if (bulletSpawnPoint & bullet) // bullet and spawn point exist
             {
                 Instantiate(bullet, bulletSpawnPoint.transform.position, bulletSpawnPoint.transform.rotation);
                 shot.Play();
@@ -162,6 +179,7 @@ public class ShooterFSM : Interactable
         }
     }
 
+    /* Cast a Ray towards the player. If the ray collides with the Player then canSeePlayer is true. Return canSeePlayer*/
     private bool CanSeePlayer()
     {
         RaycastHit hit;
@@ -188,7 +206,6 @@ public class ShooterFSM : Interactable
     // If hit by spinattack lose 1 health
     public override void SpinInteract()
     {
-        Debug.Log("hit");
         health -= 1;
     }
 
@@ -197,6 +214,8 @@ public class ShooterFSM : Interactable
         Destroy(gameObject, 1.5f);
     }
 
+    // If current animation name matches parameter and that it not played one time, then animation
+    // still playing.
     bool isAnimationStatePlaying(string stateName)
     {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName(stateName) && animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)

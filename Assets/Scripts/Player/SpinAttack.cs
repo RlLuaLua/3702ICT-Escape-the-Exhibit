@@ -23,17 +23,18 @@ public class SpinAttack : MonoBehaviour
         }
     }
     
+    // Find all colliders that are overlapping and for each call their SpinInteract function
     void Spin()
     {
         Collider[] hitColliders = Physics.OverlapBox(transform.position, transform.localScale * 2, Quaternion.identity, interactable);
 
         foreach(Collider hittable in hitColliders)
         {
-            Debug.Log("Hit: " + hittable.name);
             hittable.GetComponent<Interactable>().SpinInteract();
         }
     }
 
+    // This function is called as an Animation Event at the end of the Spin animation
     void stopSpinAnimation() {
         animator.SetBool("isSpinning", false);
     }

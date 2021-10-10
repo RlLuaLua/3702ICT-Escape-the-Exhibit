@@ -172,7 +172,6 @@ public class LevelManager : MonoBehaviour
 
     public void CheckpointCrossed()
     {
-        Debug.Log("checkpoint");
         if (manager != null && manager.NextLevelExists())
         {
             NextLevel();

@@ -5,6 +5,5 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     public virtual void SpinInteract(){
-        Debug.Log("Cube Hit");
     }
 }

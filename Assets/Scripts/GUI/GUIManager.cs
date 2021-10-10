@@ -45,7 +45,6 @@ public class GUIManager : MonoBehaviour
 
     public bool NextLevelExists()
     { 
-        Debug.Log(LevelNameForLevel(level + 1));
         return Application.CanStreamedLevelBeLoaded(LevelNameForLevel(level + 1));
     }
 

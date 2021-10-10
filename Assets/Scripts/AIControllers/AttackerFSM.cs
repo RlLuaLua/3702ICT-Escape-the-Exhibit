@@ -66,12 +66,12 @@ public class AttackerFSM : Interactable
 
         if (health > 0)
         {
-            // Go to chase state if player is in range
+            // Go to chase state if player is in range and in line of sight
             if (CanSeePlayer() && playerDist <= chaseRange && playerDist > attackRange)
             {
                 curState = FSMState.Chase;
             }
-            // Return to patrol state after the player leaves the chase range
+            // Return to patrol state after the player leaves the chase range or line of sight
             else if (!CanSeePlayer() || playerDist > chaseRange)
             {
                 curState = FSMState.Patrol;
@@ -82,6 +82,7 @@ public class AttackerFSM : Interactable
         {
             curState = FSMState.Dead;
         }
+
         if(GetComponent<EdgeDetection>().isGrounded){
             moveDirection.y = -0.1f;
         }
@@ -90,11 +91,12 @@ public class AttackerFSM : Interactable
     // Check the collision with the player
     void OnControllerColliderHit(ControllerColliderHit collider)
     {
-        // Reduce health
+        // Go to attack state if collide with Player
         if (collider.gameObject.tag == "Player")
         {
             curState = FSMState.Attack;
         }
+        // Go to next or beginning waypoint if hit obstacle with "Side" tag
         if (collider.gameObject.tag == "Side") {
             if (currentWaypoint + 1 < waypointList.Length) { currentWaypoint++; } else { currentWaypoint = 0; }
         }
@@ -102,7 +104,6 @@ public class AttackerFSM : Interactable
     // If hit by Spin Attack, lose 1 health
     public override void SpinInteract()
     {
-        Debug.Log("hit");
         health -= 1;
     }
 
@@ -130,7 +131,9 @@ public class AttackerFSM : Interactable
     {
         /* If Sense animation has not been played (i.e. playerSeen is false), turn in direction of the player, play animation. 
            After the animation has played, set playerSeen to true and reset timeElapsed. 
-           If Sense animation has been played, set moveSpeed to chaseSpeed and move character*/
+           If Sense animation has been played, set moveSpeed to chaseSpeed. If will be touching ground in 0.5 then move character
+           else play Taunt animation
+        */
         transform.LookAt(new Vector3(playerTransform.transform.position.x, transform.position.y, transform.position.z));
         if (!animator.GetBool("playerSeen"))
         {
@@ -154,12 +157,15 @@ public class AttackerFSM : Interactable
         }
     }
 
+    // Rotate towards player and play attack animation. The attack animation has an Animation Event which will
+    // trigger DamagePlayer() when the animation reaches where the head of character hits the player
     protected void UpdateAttackState()
     {
         transform.LookAt(new Vector3(playerTransform.transform.position.x, transform.position.y, transform.position.z));
         animator.Play("Attack", -1);
     }
 
+    // Play die animation turn off collision with Player character, then destroy after a delay
     protected void UpdateDeadState()
     {
         animator.Play("Die", -1);
@@ -167,6 +173,7 @@ public class AttackerFSM : Interactable
         Destroy(gameObject, 1.5f);
     }
 
+    /* Cast a Ray directly towards the player x position. If the ray collides with the Player then canSeePlayer is true. Return canSeePlayer*/
     private bool CanSeePlayer()
     {
         RaycastHit hit;
@@ -210,6 +217,8 @@ public class AttackerFSM : Interactable
 
     }
 
+    // Find the HealthController on the Player GameObject and call the ReceiveDamage() function
+    // passing the damage caused by this character
     protected void DamagePlayer()
     {
         GameObject.FindGameObjectWithTag("Player").GetComponent<HealthController>().ReceiveDamage(damageAmount);
