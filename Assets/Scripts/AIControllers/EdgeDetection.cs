@@ -14,6 +14,7 @@ public class EdgeDetection : MonoBehaviour
         isTouching = Physics.Raycast(ray, distance);
         Ray ray2 = new Ray(transform.position + transform.TransformDirection(Vector3.forward), Vector3.down);
         Debug.DrawRay(ray2.origin, ray2.direction, Color.magenta);
-        isGrounded = Physics.Raycast(ray, 0.1f);
+        RaycastHit hit;
+        isGrounded = Physics.Raycast(ray, out hit, 0.1f);
     }
 }
