@@ -53,11 +53,10 @@ public class LevelManager : MonoBehaviour
 
     void Reset()
     {
-        state = LevelState.Playing;
         Texture2D paintingTexture = Resources.Load<Texture2D>("Levels/" + level.ToString());
         paintingImage.sprite = Sprite.Create(paintingTexture, new Rect(0, 0, paintingTexture.width, paintingTexture.height), new Vector2(0.5f, 0.5f));
 
-        var player = GameObject.FindGameObjectWithTag("Player");
+        var player = GameObject.Find("Player");
         playerHealthController = player.GetComponent<HealthController>();
         checkpoint = GameObject.FindGameObjectWithTag("Checkpoint");
         checkpoint.SetActive(false);
@@ -87,7 +86,7 @@ public class LevelManager : MonoBehaviour
 
             images[i] = imgObject;
         }
-
+        state = LevelState.Playing;
     }
 
     void Update()
