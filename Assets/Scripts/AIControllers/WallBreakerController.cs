@@ -128,7 +128,7 @@ public class WallBreakerController : MonoBehaviour
     }
 
     void Destroy() {
-        Destroy(gameObject, 1.5f);
+        Destroy(gameObject, 0.5f);
     }
 
     private void OnDrawGizmos() {
