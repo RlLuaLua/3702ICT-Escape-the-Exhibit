@@ -575,6 +575,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wallbreaker
       objectReference: {fileID: 0}
+    - target: {fileID: 1479333123388592148, guid: dd6351e18ff163c4bb4048b687829bde, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 1480882672106751222, guid: dd6351e18ff163c4bb4048b687829bde, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1481,6 +1485,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 58112790025532343, guid: e14d4250b82a64ba6a9c4d9d2b42fc8c, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 963194227}
     - target: {fileID: 843926358810306711, guid: e14d4250b82a64ba6a9c4d9d2b42fc8c, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1703,6 +1711,10 @@ PrefabInstance:
     - target: {fileID: 1479333123388592148, guid: dd6351e18ff163c4bb4048b687829bde, type: 3}
       propertyPath: m_Name
       value: Wallbreaker (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479333123388592148, guid: dd6351e18ff163c4bb4048b687829bde, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1480882672106751222, guid: dd6351e18ff163c4bb4048b687829bde, type: 3}
       propertyPath: m_RootOrder
