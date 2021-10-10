@@ -28,6 +28,7 @@ public class WallBreakerController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        controller.detectCollisions = false;
         animator = GetComponent<Animator>();
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         player = playerObject.transform;
@@ -94,6 +95,7 @@ public class WallBreakerController : MonoBehaviour
 
     void UpdateDefeatState() {
         animator.Play("Die", -1);
+        Physics.IgnoreCollision(GameObject.FindGameObjectWithTag("Player").GetComponent<Collider>(), transform.GetComponent<Collider>());
     }
 
     // Check the collision with the player
@@ -107,6 +109,11 @@ public class WallBreakerController : MonoBehaviour
         if (collider.gameObject.tag == "Breakable_Wall") {
             currentState = FSMState.Defeat;
         }
+        if (collider.gameObject.tag == "Side")
+        {
+            currentState = FSMState.Stunned;
+        }
+        
     }
 
     // Raycast from controller to ground to determine if on slope. If is on slope, increase downwards force to smooth movement down slope

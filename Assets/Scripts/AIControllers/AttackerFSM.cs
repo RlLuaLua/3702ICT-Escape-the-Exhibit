@@ -67,7 +67,7 @@ public class AttackerFSM : Interactable
         if (health > 0)
         {
             // Go to chase state if player is in range
-            if (playerDist <= chaseRange && playerDist > attackRange)
+            if (CanSeePlayer() && playerDist <= chaseRange && playerDist > attackRange)
             {
                 curState = FSMState.Chase;
             }
@@ -82,6 +82,7 @@ public class AttackerFSM : Interactable
         {
             curState = FSMState.Dead;
         }
+
     }
 
     // Check the collision with the player
@@ -91,6 +92,9 @@ public class AttackerFSM : Interactable
         if (collider.gameObject.tag == "Player")
         {
             curState = FSMState.Attack;
+        }
+        if (collider.gameObject.tag == "Side") {
+            if (currentWaypoint + 1 < waypointList.Length) { currentWaypoint++; } else { currentWaypoint = 0; }
         }
     }
     // If hit by Spin Attack, lose 1 health
@@ -152,17 +156,39 @@ public class AttackerFSM : Interactable
     protected void UpdateDeadState()
     {
         animator.Play("Die", -1);
-        moveSpeed = 0f;
+        Physics.IgnoreCollision(GameObject.FindGameObjectWithTag("Player").GetComponent<Collider>(), transform.GetComponent<Collider>());
         Destroy(gameObject, 1.5f);
+    }
+
+    private bool CanSeePlayer()
+    {
+        RaycastHit hit;
+        Vector3 direction = new Vector3(playerTransform.position.x, 0.5f, 0) - new Vector3(transform.position.x, transform.position.y + 0.5f, 0);
+        direction.z = 0;
+        bool canSeePlayer = Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), direction, out hit) && hit.collider.gameObject.tag == "Player";
+        Debug.DrawRay(transform.position + new Vector3(0, 0.5f, 0), direction, Color.cyan);
+        return canSeePlayer;
     }
 
     protected void Move()
     {
-        animator.Play("Walk", -1);
-        moveDirection = new Vector3(transform.forward.x * moveSpeed, moveDirection.y, 0f);
-        moveDirection.y += (Physics.gravity.y * Time.deltaTime);
-        controller.Move(moveDirection * Time.deltaTime);
-        AdjustMoveOnSlope();
+        if (transform.GetComponent<EdgeDetection>().isTouching) {
+            animator.Play("Walk", -1);
+            moveDirection = new Vector3(transform.forward.x * moveSpeed, moveDirection.y, 0f);
+            moveDirection.y += (Physics.gravity.y * Time.deltaTime);
+            controller.Move(moveDirection * Time.deltaTime);
+            AdjustMoveOnSlope();
+        }
+        else {
+            if (currentWaypoint == 0) {
+                transform.LookAt(new Vector3(waypointList[1].transform.position.x, transform.position.y, transform.position.z));
+                currentWaypoint = 1;
+            }
+            else {
+                transform.LookAt(new Vector3(waypointList[0].transform.position.x, transform.position.y, transform.position.z));
+                currentWaypoint = 0;
+            }
+        }
     }
 
     // Raycast from controller to ground to determine if on slope. If is on slope, increase downwards force to smooth movement down slope

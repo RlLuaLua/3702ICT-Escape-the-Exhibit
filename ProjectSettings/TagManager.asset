@@ -9,6 +9,7 @@ TagManager:
   - Breakable_Wall
   - Lever
   - Enemy
+  - Side
   layers:
   - Default
   - TransparentFX

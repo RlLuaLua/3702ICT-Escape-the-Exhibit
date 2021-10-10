@@ -82,10 +82,12 @@ public class SwitchActivatorController : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider collider) {
-        lever = collider.gameObject.GetComponent<LeverController>();
-        if (!lever.isOn) {
-            if (collider.gameObject.tag == "Lever" && lever.requireActivator) {
-                currentState = FSMState.Activate;
+        if (collider.gameObject.tag == "Lever") {
+            lever = collider.gameObject.GetComponent<LeverController>();
+            if (!lever.isOn) {
+                if (lever.requireActivator) {
+                    currentState = FSMState.Activate;
+                }
             }
         }
     }

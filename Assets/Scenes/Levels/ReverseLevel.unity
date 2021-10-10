@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -178,6 +178,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
 --- !u!4 &2354036 stripped
@@ -197,6 +205,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475278381}
     m_Modifications:
+    - target: {fileID: 4771763024588579926, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4896267586936609771, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_RootOrder
       value: 65
@@ -244,6 +256,10 @@ PrefabInstance:
     - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_Name
       value: Grass Block (half) (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
@@ -329,6 +345,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6943f49d909fb5d4c9a60b4678287c23, type: 3}
+--- !u!4 &77946481 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 594036544199482532, guid: 90c37241518fcf94cb3096b141793696, type: 3}
+  m_PrefabInstance: {fileID: 332239712}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &93020775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -384,8 +405,89 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+--- !u!1001 &126220257
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1612254245}
+    m_Modifications:
+    - target: {fileID: 2095874537, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: end
+      value: 
+      objectReference: {fileID: 608359811}
+    - target: {fileID: 2095874537, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: start
+      value: 
+      objectReference: {fileID: 1364951935}
+    - target: {fileID: 2095874537, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: desiredState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2095874537, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: turnAroundTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854887785391317244, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_Name
+      value: Fence Down
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
 --- !u!1 &132564287
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +500,7 @@ GameObject:
   - component: {fileID: 132564291}
   - component: {fileID: 132564290}
   - component: {fileID: 132564289}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -493,6 +595,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: elevator
       objectReference: {fileID: 0}
+    - target: {fileID: 4854887785391317244, guid: 9c701a977f2e44e448d6884b74b27bdd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7354570500041579000, guid: 9c701a977f2e44e448d6884b74b27bdd, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -580,6 +686,7 @@ MonoBehaviour:
   end: {fileID: 608359811}
   speed: 1
   turnAroundTime: 3
+  triggersActivator: 0
 --- !u!1 &155562249
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +773,14 @@ PrefabInstance:
     - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
       propertyPath: m_Name
       value: Dirt Block (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
@@ -848,6 +963,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475278381}
     m_Modifications:
+    - target: {fileID: 4771763024588579926, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4896267586936609771, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_RootOrder
       value: 33
@@ -896,6 +1015,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass Block (half)
       objectReference: {fileID: 0}
+    - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
 --- !u!1001 &274874753
@@ -905,6 +1028,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475278381}
     m_Modifications:
+    - target: {fileID: 4771763024588579926, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4896267586936609771, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -952,6 +1079,10 @@ PrefabInstance:
     - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_Name
       value: Grass Block (half) (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
@@ -1015,6 +1146,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
 --- !u!4 &276757575 stripped
@@ -1029,6 +1168,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475278381}
     m_Modifications:
+    - target: {fileID: 4771763024588579926, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4896267586936609771, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -1076,6 +1219,10 @@ PrefabInstance:
     - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_Name
       value: Grass Block (half) (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
@@ -1166,6 +1313,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
 --- !u!4 &310826089 stripped
@@ -1228,6 +1383,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
 --- !u!4 &316840799 stripped
@@ -1242,6 +1405,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475278381}
     m_Modifications:
+    - target: {fileID: 4771763024588579926, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4896267586936609771, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -1289,6 +1456,10 @@ PrefabInstance:
     - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_Name
       value: Grass Block (half) (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
@@ -1382,6 +1553,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90c37241518fcf94cb3096b141793696, type: 3}
+--- !u!1001 &332239712
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1659915419}
+    m_Modifications:
+    - target: {fileID: 594036543142937163, guid: 90c37241518fcf94cb3096b141793696, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 594036544117187168, guid: 90c37241518fcf94cb3096b141793696, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 594036544199482532, guid: 90c37241518fcf94cb3096b141793696, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 594036544199482532, guid: 90c37241518fcf94cb3096b141793696, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.131444
+      objectReference: {fileID: 0}
+    - target: {fileID: 594036544199482532, guid: 90c37241518fcf94cb3096b141793696, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 594036544199482532, guid: 90c37241518fcf94cb3096b141793696, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.11299753
+      objectReference: {fileID: 0}
+    - target: {fileID: 594036544199482532, guid: 90c37241518fcf94cb3096b141793696, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 594036544199482532, guid: 90c37241518fcf94cb3096b141793696, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594036544199482532, guid: 90c37241518fcf94cb3096b141793696, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594036544199482532, guid: 90c37241518fcf94cb3096b141793696, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594036544199482532, guid: 90c37241518fcf94cb3096b141793696, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594036544199482532, guid: 90c37241518fcf94cb3096b141793696, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594036544199482532, guid: 90c37241518fcf94cb3096b141793696, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 594036544199482539, guid: 90c37241518fcf94cb3096b141793696, type: 3}
+      propertyPath: m_Name
+      value: Attacker Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 594036544199482539, guid: 90c37241518fcf94cb3096b141793696, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 90c37241518fcf94cb3096b141793696, type: 3}
 --- !u!1001 &334696208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1392,6 +1632,10 @@ PrefabInstance:
     - target: {fileID: 2421372203045485886, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
       propertyPath: m_Name
       value: Grass Block (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2421372203045485886, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
       propertyPath: m_RootOrder
@@ -1436,6 +1680,10 @@ PrefabInstance:
     - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828697765769784280, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
@@ -1573,6 +1821,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
 --- !u!4 &376647194 stripped
@@ -1634,6 +1890,14 @@ PrefabInstance:
     - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
       propertyPath: m_Name
       value: Dirt Block (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
@@ -1754,6 +2018,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475278381}
     m_Modifications:
+    - target: {fileID: 4771763024588579926, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4896267586936609771, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -1801,6 +2069,10 @@ PrefabInstance:
     - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_Name
       value: Grass Block (half) (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
@@ -1864,6 +2136,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
 --- !u!4 &447302695 stripped
@@ -1885,7 +2165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 475278381}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: landscape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1985,6 +2265,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475278381}
     m_Modifications:
+    - target: {fileID: 4771763024588579926, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4896267586936609771, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -2032,6 +2316,10 @@ PrefabInstance:
     - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_Name
       value: Grass Block (half) (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
@@ -2102,6 +2390,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree
       objectReference: {fileID: 0}
+    - target: {fileID: 701392120028693938, guid: 3fdcafc8788ca439fa45db5c7f9208f1, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1288108781502295836, guid: 3fdcafc8788ca439fa45db5c7f9208f1, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2148,6 +2440,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fdcafc8788ca439fa45db5c7f9208f1, type: 3}
+--- !u!1 &560995945 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4854887785391317244, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+  m_PrefabInstance: {fileID: 1576322948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &560995946 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+  m_PrefabInstance: {fileID: 1576322948}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &582815028 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8464947243017929710, guid: 7ad9c4e9550a548acb56b5d8943178c0, type: 3}
@@ -2183,7 +2485,7 @@ Transform:
   - {fileID: 350940568}
   - {fileID: 429435730}
   m_Father: {fileID: 772560242}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &603505842
 PrefabInstance:
@@ -2192,6 +2494,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475278381}
     m_Modifications:
+    - target: {fileID: 4771763024588579926, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4896267586936609771, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -2239,6 +2545,10 @@ PrefabInstance:
     - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_Name
       value: Grass Block (half) (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
@@ -2345,6 +2655,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
 --- !u!4 &610026678 stripped
@@ -2430,6 +2748,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block Ramp (half) (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 9093427387054545236, guid: 7ad9c4e9550a548acb56b5d8943178c0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ad9c4e9550a548acb56b5d8943178c0, type: 3}
 --- !u!4 &643483415 stripped
@@ -2492,6 +2814,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
 --- !u!4 &653435753 stripped
@@ -2506,6 +2836,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475278381}
     m_Modifications:
+    - target: {fileID: 4771763024588579926, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4896267586936609771, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -2554,8 +2888,78 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass Block (half) (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+--- !u!1001 &690287447
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 475278381}
+    m_Modifications:
+    - target: {fileID: 226922406617680600, guid: f3b773311fb2444d9b48b1472055bf01, type: 3}
+      propertyPath: m_RootOrder
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 226922406617680600, guid: f3b773311fb2444d9b48b1472055bf01, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 226922406617680600, guid: f3b773311fb2444d9b48b1472055bf01, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 226922406617680600, guid: f3b773311fb2444d9b48b1472055bf01, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226922406617680600, guid: f3b773311fb2444d9b48b1472055bf01, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226922406617680600, guid: f3b773311fb2444d9b48b1472055bf01, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226922406617680600, guid: f3b773311fb2444d9b48b1472055bf01, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226922406617680600, guid: f3b773311fb2444d9b48b1472055bf01, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226922406617680600, guid: f3b773311fb2444d9b48b1472055bf01, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226922406617680600, guid: f3b773311fb2444d9b48b1472055bf01, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226922406617680600, guid: f3b773311fb2444d9b48b1472055bf01, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 607387907253489762, guid: f3b773311fb2444d9b48b1472055bf01, type: 3}
+      propertyPath: m_Name
+      value: Dirk Block (half) (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 607387907253489762, guid: f3b773311fb2444d9b48b1472055bf01, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f3b773311fb2444d9b48b1472055bf01, type: 3}
+--- !u!4 &690287448 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 226922406617680600, guid: f3b773311fb2444d9b48b1472055bf01, type: 3}
+  m_PrefabInstance: {fileID: 690287447}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705771377
 GameObject:
   m_ObjectHideFlags: 0
@@ -2668,6 +3072,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475278381}
     m_Modifications:
+    - target: {fileID: 4771763024588579926, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4896267586936609771, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -2716,6 +3124,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass Block (half) (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
 --- !u!4 &764498501 stripped
@@ -2751,11 +3163,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 155562250}
-  - {fileID: 905158194}
   - {fileID: 1818790390}
-  - {fileID: 1850461081}
   - {fileID: 585087767}
-  - {fileID: 2018536829}
+  - {fileID: 2095874535}
+  - {fileID: 1411310938}
+  - {fileID: 560995946}
   m_Father: {fileID: 1612254245}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2766,6 +3178,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475278381}
     m_Modifications:
+    - target: {fileID: 4771763024588579926, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4896267586936609771, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -2813,6 +3229,10 @@ PrefabInstance:
     - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_Name
       value: Grass Block (half) (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
@@ -2896,7 +3316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4398668617825043157, guid: 2b8190df879c94de584044cd6a60532d, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4398668617825043157, guid: 2b8190df879c94de584044cd6a60532d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2969,15 +3389,15 @@ PrefabInstance:
     - target: {fileID: 7505159440496555934, guid: 2b8190df879c94de584044cd6a60532d, type: 3}
       propertyPath: platforms.Array.data[3]
       value: 
-      objectReference: {fileID: 905158193}
+      objectReference: {fileID: 2095874534}
     - target: {fileID: 7505159440496555934, guid: 2b8190df879c94de584044cd6a60532d, type: 3}
       propertyPath: platforms.Array.data[4]
       value: 
-      objectReference: {fileID: 1850461082}
+      objectReference: {fileID: 1411310937}
     - target: {fileID: 7505159440496555934, guid: 2b8190df879c94de584044cd6a60532d, type: 3}
       propertyPath: platforms.Array.data[5]
       value: 
-      objectReference: {fileID: 2018536830}
+      objectReference: {fileID: 560995945}
     - target: {fileID: 7505159440496555934, guid: 2b8190df879c94de584044cd6a60532d, type: 3}
       propertyPath: platforms.Array.data[6]
       value: 
@@ -3071,6 +3491,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
 --- !u!4 &824950368 stripped
@@ -3121,6 +3549,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9199514b89085324885f286544012aec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &839498483
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 772560242}
+    m_Modifications:
+    - target: {fileID: 2095874537, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: end
+      value: 
+      objectReference: {fileID: 1101519844}
+    - target: {fileID: 2095874537, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: start
+      value: 
+      objectReference: {fileID: 705771377}
+    - target: {fileID: 4854887785391317244, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_Name
+      value: Fence Down
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
 --- !u!1001 &850315472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3128,6 +3621,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475278381}
     m_Modifications:
+    - target: {fileID: 4771763024588579926, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4896267586936609771, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -3176,6 +3673,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass Block (half) (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
 --- !u!4 &850315473 stripped
@@ -3193,6 +3694,10 @@ PrefabInstance:
     - target: {fileID: 2421372203045485886, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
       propertyPath: m_Name
       value: Grass Block (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2421372203045485886, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
       propertyPath: m_RootOrder
@@ -3237,6 +3742,10 @@ PrefabInstance:
     - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828697765769784280, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
@@ -3343,6 +3852,7 @@ MonoBehaviour:
   end: {fileID: 1147072258}
   speed: 1
   turnAroundTime: 0
+  triggersActivator: 0
 --- !u!1001 &887477827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3419,6 +3929,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475278381}
     m_Modifications:
+    - target: {fileID: 4771763024588579926, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4896267586936609771, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -3466,6 +3980,10 @@ PrefabInstance:
     - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_Name
       value: Grass Block (half) (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
@@ -3520,52 +4038,12 @@ MonoBehaviour:
   end: {fileID: 240318316}
   speed: 1
   turnAroundTime: 0
+  triggersActivator: 0
 --- !u!4 &904172456 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 445288408605641066, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
   m_PrefabInstance: {fileID: 1730109742}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &905158193 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4854887785391317244, guid: 9c701a977f2e44e448d6884b74b27bdd, type: 3}
-  m_PrefabInstance: {fileID: 442667674}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &905158194 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7354570500041579000, guid: 9c701a977f2e44e448d6884b74b27bdd, type: 3}
-  m_PrefabInstance: {fileID: 442667674}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &905158195
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 905158193}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.1}
-  m_Center: {x: 0, y: 0.5, z: -0.1}
---- !u!114 &905158196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 905158193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 021932ed56b6f1c45bfd79376dfcc81a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  curState: 0
-  desiredState: 1
-  start: {fileID: 705771377}
-  end: {fileID: 1101519844}
-  speed: 1
-  turnAroundTime: 0
 --- !u!4 &922463678 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 594036544199482532, guid: 90c37241518fcf94cb3096b141793696, type: 3}
@@ -3703,6 +4181,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
 --- !u!4 &924472524 stripped
@@ -3765,6 +4251,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
 --- !u!4 &934704236 stripped
@@ -3786,7 +4280,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8464947243017929710, guid: 7ad9c4e9550a548acb56b5d8943178c0, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8464947243017929710, guid: 7ad9c4e9550a548acb56b5d8943178c0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3893,6 +4387,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass Block
       objectReference: {fileID: 0}
+    - target: {fileID: 2421372203045485886, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -3937,6 +4435,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6828697765769784280, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
 --- !u!4 &993112542 stripped
@@ -3954,6 +4456,10 @@ PrefabInstance:
     - target: {fileID: 2421372203045485886, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
       propertyPath: m_Name
       value: Grass Block
+      objectReference: {fileID: 0}
+    - target: {fileID: 2421372203045485886, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
       propertyPath: m_RootOrder
@@ -3999,12 +4505,86 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6828697765769784280, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
 --- !u!4 &1090631887 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
   m_PrefabInstance: {fileID: 1090631886}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1096196913
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 475278381}
+    m_Modifications:
+    - target: {fileID: 2421372203045485886, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_Name
+      value: Grass Block (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2421372203045485886, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_RootOrder
+      value: 63
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828697765769784280, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+--- !u!4 &1096196914 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+  m_PrefabInstance: {fileID: 1096196913}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1101519844
 GameObject:
@@ -4152,6 +4732,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
 --- !u!4 &1258717522 stripped
@@ -4169,6 +4757,10 @@ PrefabInstance:
     - target: {fileID: 1553634071301383330, guid: b5a4cd05c15624534af535c579189dd7, type: 3}
       propertyPath: m_Name
       value: Dirt Block Ramp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553634071301383330, guid: b5a4cd05c15624534af535c579189dd7, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2216981958140673560, guid: b5a4cd05c15624534af535c579189dd7, type: 3}
       propertyPath: m_RootOrder
@@ -4408,12 +5000,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
 --- !u!4 &1402040315 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 445288408605641066, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
   m_PrefabInstance: {fileID: 1402040314}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1411310937 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4854887785391317244, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+  m_PrefabInstance: {fileID: 1739331257}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1411310938 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+  m_PrefabInstance: {fileID: 1739331257}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1414582269
 PrefabInstance:
@@ -4479,6 +5089,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1659915419}
     m_Modifications:
+    - target: {fileID: 5168292760833622926, guid: 6943f49d909fb5d4c9a60b4678287c23, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5168292760833622927, guid: 6943f49d909fb5d4c9a60b4678287c23, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5168292761323403324, guid: 6943f49d909fb5d4c9a60b4678287c23, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.303
@@ -4634,6 +5252,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475278381}
     m_Modifications:
+    - target: {fileID: 4771763024588579926, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4896267586936609771, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -4681,6 +5303,10 @@ PrefabInstance:
     - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_Name
       value: Grass Block (half) (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
@@ -4744,6 +5370,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
 --- !u!4 &1469303341 stripped
@@ -4758,6 +5392,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475278381}
     m_Modifications:
+    - target: {fileID: 4771763024588579926, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4896267586936609771, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_RootOrder
       value: 61
@@ -4805,6 +5443,10 @@ PrefabInstance:
     - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_Name
       value: Grass Block (half) (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
@@ -4877,6 +5519,10 @@ PrefabInstance:
     - target: {fileID: 607387907253489762, guid: f3b773311fb2444d9b48b1472055bf01, type: 3}
       propertyPath: m_Name
       value: Dirk Block (half) (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 607387907253489762, guid: f3b773311fb2444d9b48b1472055bf01, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3b773311fb2444d9b48b1472055bf01, type: 3}
@@ -5058,6 +5704,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9199514b89085324885f286544012aec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1576322948
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 772560242}
+    m_Modifications:
+    - target: {fileID: 2095874537, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: end
+      value: 
+      objectReference: {fileID: 429435729}
+    - target: {fileID: 2095874537, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: start
+      value: 
+      objectReference: {fileID: 350940567}
+    - target: {fileID: 4854887785391317244, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_Name
+      value: Fence Down (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.026
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
 --- !u!1001 &1584679734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5065,6 +5776,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475278381}
     m_Modifications:
+    - target: {fileID: 4771763024588579926, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4896267586936609771, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_RootOrder
       value: 64
@@ -5113,6 +5828,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass Block (half) (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
 --- !u!4 &1584679735 stripped
@@ -5151,6 +5870,7 @@ Transform:
   - {fileID: 772560242}
   - {fileID: 1358225892}
   - {fileID: 133341113}
+  - {fileID: 229541503}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5246,6 +5966,7 @@ Transform:
   - {fileID: 1867004610}
   - {fileID: 1837553617}
   - {fileID: 1514572546}
+  - {fileID: 77946481}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5256,6 +5977,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475278381}
     m_Modifications:
+    - target: {fileID: 4771763024588579926, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4896267586936609771, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -5303,6 +6028,10 @@ PrefabInstance:
     - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_Name
       value: Grass Block (half)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
@@ -5447,6 +6176,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
 --- !u!4 &1710502740 stripped
@@ -5508,6 +6245,14 @@ PrefabInstance:
     - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
       propertyPath: m_Name
       value: Dirt Block (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
@@ -5571,8 +6316,81 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+--- !u!1001 &1739331257
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 772560242}
+    m_Modifications:
+    - target: {fileID: 2095874537, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: end
+      value: 
+      objectReference: {fileID: 1428222426}
+    - target: {fileID: 2095874537, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: start
+      value: 
+      objectReference: {fileID: 1823901856}
+    - target: {fileID: 4854887785391317244, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_Name
+      value: Fence Down (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.026
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354570500041579000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aefbe587342583d45b90ff5201e23483, type: 3}
 --- !u!1001 &1740708180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5582,7 +6400,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1203632876314269241, guid: afbc0f4b8ad2d4aeea74740ff5fce9ce, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1203632876314269241, guid: afbc0f4b8ad2d4aeea74740ff5fce9ce, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5685,6 +6503,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
 --- !u!4 &1749386366 stripped
@@ -5747,6 +6573,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
 --- !u!4 &1752566882 stripped
@@ -5764,6 +6598,10 @@ PrefabInstance:
     - target: {fileID: 2421372203045485886, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
       propertyPath: m_Name
       value: Grass Block (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2421372203045485886, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
       propertyPath: m_RootOrder
@@ -5808,6 +6646,10 @@ PrefabInstance:
     - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828697765769784280, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
@@ -5921,6 +6763,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475278381}
     m_Modifications:
+    - target: {fileID: 4771763024588579926, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4896267586936609771, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -5969,6 +6815,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass Block (half) (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
 --- !u!4 &1798129662 stripped
@@ -6006,7 +6856,7 @@ Transform:
   - {fileID: 1823901857}
   - {fileID: 1428222427}
   m_Father: {fileID: 772560242}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1823901856
 GameObject:
@@ -6058,6 +6908,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475278381}
     m_Modifications:
+    - target: {fileID: 4771763024588579926, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4896267586936609771, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -6106,6 +6960,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass Block (half) (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
 --- !u!4 &1833128975 stripped
@@ -6123,6 +6981,10 @@ PrefabInstance:
     - target: {fileID: 2421372203045485886, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
       propertyPath: m_Name
       value: Grass Block (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2421372203045485886, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
       propertyPath: m_RootOrder
@@ -6167,6 +7029,10 @@ PrefabInstance:
     - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828697765769784280, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
@@ -6230,6 +7096,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
 --- !u!4 &1836525099 stripped
@@ -6249,6 +7123,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475278381}
     m_Modifications:
+    - target: {fileID: 4771763024588579926, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4896267586936609771, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -6297,6 +7175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass Block (half) (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
 --- !u!1001 &1841401028
@@ -6308,7 +7190,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4021014908493097561, guid: 0de82dc4304b0f14eb6109ca7f5846a1, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4021014908493097561, guid: 0de82dc4304b0f14eb6109ca7f5846a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6419,6 +7301,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
 --- !u!4 &1843008594 stripped
@@ -6426,7 +7316,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 445288408605641066, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
   m_PrefabInstance: {fileID: 1843008593}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1850461080
+--- !u!1001 &1843498217
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -6536,6 +7426,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475278381}
     m_Modifications:
+    - target: {fileID: 4771763024588579926, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4896267586936609771, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -6584,6 +7478,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass Block (half) (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
 --- !u!4 &1900655139 stripped
@@ -6606,6 +7504,10 @@ PrefabInstance:
     - target: {fileID: 2421372203045485886, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
       propertyPath: m_Name
       value: Grass Block (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2421372203045485886, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
       propertyPath: m_RootOrder
@@ -6651,6 +7553,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6828697765769784280, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
 --- !u!4 &1910748679 stripped
@@ -6668,6 +7574,10 @@ PrefabInstance:
     - target: {fileID: 2421372203045485886, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
       propertyPath: m_Name
       value: Grass Block (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2421372203045485886, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
       propertyPath: m_RootOrder
@@ -6712,6 +7622,10 @@ PrefabInstance:
     - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828697765769784280, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
@@ -6806,6 +7720,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475278381}
     m_Modifications:
+    - target: {fileID: 4771763024588579926, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4896267586936609771, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -6853,6 +7771,10 @@ PrefabInstance:
     - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_Name
       value: Grass Block (half) (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
@@ -6929,6 +7851,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass Block (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2421372203045485886, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3085424911468439428, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
       propertyPath: m_RootOrder
       value: 50
@@ -6973,106 +7899,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6828697765769784280, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a70f89de64d74069855934d2de6396c, type: 3}
---- !u!1001 &2018536828
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 772560242}
-    m_Modifications:
-    - target: {fileID: 4854887785391317244, guid: 9c701a977f2e44e448d6884b74b27bdd, type: 3}
-      propertyPath: m_Name
-      value: Fence (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7354570500041579000, guid: 9c701a977f2e44e448d6884b74b27bdd, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7354570500041579000, guid: 9c701a977f2e44e448d6884b74b27bdd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.505
-      objectReference: {fileID: 0}
-    - target: {fileID: 7354570500041579000, guid: 9c701a977f2e44e448d6884b74b27bdd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7.026
-      objectReference: {fileID: 0}
-    - target: {fileID: 7354570500041579000, guid: 9c701a977f2e44e448d6884b74b27bdd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7354570500041579000, guid: 9c701a977f2e44e448d6884b74b27bdd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7354570500041579000, guid: 9c701a977f2e44e448d6884b74b27bdd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7354570500041579000, guid: 9c701a977f2e44e448d6884b74b27bdd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7354570500041579000, guid: 9c701a977f2e44e448d6884b74b27bdd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7354570500041579000, guid: 9c701a977f2e44e448d6884b74b27bdd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 7354570500041579000, guid: 9c701a977f2e44e448d6884b74b27bdd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 7354570500041579000, guid: 9c701a977f2e44e448d6884b74b27bdd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9c701a977f2e44e448d6884b74b27bdd, type: 3}
---- !u!4 &2018536829 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7354570500041579000, guid: 9c701a977f2e44e448d6884b74b27bdd, type: 3}
-  m_PrefabInstance: {fileID: 2018536828}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2018536830 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4854887785391317244, guid: 9c701a977f2e44e448d6884b74b27bdd, type: 3}
-  m_PrefabInstance: {fileID: 2018536828}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &2018536831
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018536830}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.1}
-  m_Center: {x: 0, y: 0.5, z: -0.1}
---- !u!114 &2018536832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018536830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 021932ed56b6f1c45bfd79376dfcc81a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  curState: 0
-  desiredState: 1
-  start: {fileID: 350940567}
-  end: {fileID: 429435729}
-  speed: 1
-  turnAroundTime: 0
 --- !u!1001 &2061275932
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7127,6 +7959,10 @@ PrefabInstance:
     - target: {fileID: 607387907253489762, guid: f3b773311fb2444d9b48b1472055bf01, type: 3}
       propertyPath: m_Name
       value: Dirk Block (half) (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 607387907253489762, guid: f3b773311fb2444d9b48b1472055bf01, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3b773311fb2444d9b48b1472055bf01, type: 3}
@@ -7190,6 +8026,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
 --- !u!4 &2080171864 stripped
@@ -7204,6 +8048,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 475278381}
     m_Modifications:
+    - target: {fileID: 4771763024588579926, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4896267586936609771, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -7251,6 +8099,10 @@ PrefabInstance:
     - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
       propertyPath: m_Name
       value: Grass Block (half) (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240177590977544529, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b917835da45b4664b071d8a38c62717, type: 3}
@@ -7376,6 +8228,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
 --- !u!4 &2110532758 stripped
@@ -7396,7 +8256,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 594036543142937163, guid: 90c37241518fcf94cb3096b141793696, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.87
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 594036543142937163, guid: 90c37241518fcf94cb3096b141793696, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7404,7 +8264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 594036544117187168, guid: 90c37241518fcf94cb3096b141793696, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 594036544117187168, guid: 90c37241518fcf94cb3096b141793696, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7519,6 +8379,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dirt Block (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
 --- !u!4 &2131526686 stripped
@@ -7580,6 +8448,14 @@ PrefabInstance:
     - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
       propertyPath: m_Name
       value: Dirt Block (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 965507403996566480, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898584154232221671, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec32cb05b50bb4fd692d71f8f6d0a5f8, type: 3}

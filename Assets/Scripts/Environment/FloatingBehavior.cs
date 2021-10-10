@@ -13,7 +13,7 @@ public class FloatingBehavior : MonoBehaviour
         posOffset = transform.position;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         tempPos = posOffset;
         tempPos.y += Mathf.Sin(Time.fixedTime * Mathf.PI * hoverSpeed) * hoverHeight;

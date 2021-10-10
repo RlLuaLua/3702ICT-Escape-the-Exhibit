@@ -112,11 +112,16 @@ public class ShooterFSM : Interactable
 
     protected void UpdateChaseState()
     {
-        animator.Play("Run", -1);
-        //set move speed to chase move speed
-        moveSpeed = chaseMoveSpeed;
-        transform.LookAt(new Vector3(playerTransform.transform.position.x, transform.position.y, transform.position.z));
-        MoveForward();
+        if (transform.GetComponent<EdgeDetection>().isTouching) {
+            animator.Play("Run", -1);
+            //set move speed to chase move speed
+            moveSpeed = chaseMoveSpeed;
+            transform.LookAt(new Vector3(playerTransform.transform.position.x, transform.position.y, transform.position.z));
+            MoveForward();
+        }
+        else {
+            animator.Play("Taunt", -1);
+        }
     }
 
     protected void UpdateShootState()
@@ -132,6 +137,7 @@ public class ShooterFSM : Interactable
     protected void UpdateDeadState()
     {
         animator.Play("Die", -1);
+        Physics.IgnoreCollision(GameObject.FindGameObjectWithTag("Player").GetComponent<Collider>(), transform.GetComponent<Collider>());
     }
 
     void Shoot() {
