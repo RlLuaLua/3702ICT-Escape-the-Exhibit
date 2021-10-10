@@ -67,7 +67,7 @@ public class AttackerFSM : Interactable
         if (health > 0)
         {
             // Go to chase state if player is in range
-            if (CanSeePlayer() && playerDist <= chaseRange)
+            if (CanSeePlayer() && playerDist <= chaseRange && playerDist > attackRange)
             {
                 curState = FSMState.Chase;
             }
