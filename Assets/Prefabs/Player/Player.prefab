@@ -916,7 +916,6 @@ MonoBehaviour:
   invulntimer: 0
   gracePeriod: 1.5
   alive: 1
-  healthText: {fileID: 0}
 --- !u!114 &345854960497617718
 MonoBehaviour:
   m_ObjectHideFlags: 0

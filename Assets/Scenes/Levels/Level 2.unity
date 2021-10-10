@@ -9248,10 +9248,6 @@ PrefabInstance:
       propertyPath: death
       value: 
       objectReference: {fileID: 951809549}
-    - target: {fileID: 2597335426360529598, guid: 0de82dc4304b0f14eb6109ca7f5846a1, type: 3}
-      propertyPath: invulntimer
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4021014908493097561, guid: 0de82dc4304b0f14eb6109ca7f5846a1, type: 3}
       propertyPath: m_RootOrder
       value: 6
