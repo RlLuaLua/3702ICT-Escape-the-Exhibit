@@ -43,21 +43,33 @@ public class PatrollerController : MonoBehaviour
     }
 
     protected void UpdatePatrolState() {
-        animator.Play("Fly", -1);
-        currentState = FSMState.Patrol;
-        if(Mathf.Abs(transform.position.x - waypointList[currentWaypoint].transform.position.x) <= 0.5f) {
-            currentWaypoint++;
-            if (currentWaypoint >= waypointList.Length) {
-                currentWaypoint = 0;
+        if (GetComponent<EdgeDetection>().isTouching) {
+            animator.Play("Fly", -1);
+            currentState = FSMState.Patrol;
+            if(Mathf.Abs(transform.position.x - waypointList[currentWaypoint].transform.position.x) <= 0.5f) {
+                currentWaypoint++;
+                if (currentWaypoint >= waypointList.Length) {
+                    currentWaypoint = 0;
+                }
+            }
+            transform.LookAt(new Vector3(waypointList[currentWaypoint].transform.position.x, transform.position.y, transform.position.z));
+            controller.SimpleMove(transform.forward * speed);
+            // * Raycast from controller to ground to determine if on slope. If is on slope, increase downwards force to stop bumping down slope
+            RaycastHit hit;
+            Physics.Raycast(transform.position, Vector3.down, out hit, controller.height / 2 * slopeForceRayLength);
+            if (hit.normal != Vector3.up) {
+                controller.Move(Vector3.down * controller.height / 2 * slopeForce * Time.deltaTime);
             }
         }
-        transform.LookAt(new Vector3(waypointList[currentWaypoint].transform.position.x, transform.position.y, transform.position.z));
-        controller.SimpleMove(transform.forward * speed);
-        // * Raycast from controller to ground to determine if on slope. If is on slope, increase downwards force to stop bumping down slope
-        RaycastHit hit;
-        Physics.Raycast(transform.position, Vector3.down, out hit, controller.height / 2 * slopeForceRayLength);
-        if (hit.normal != Vector3.up) {
-            controller.Move(Vector3.down * controller.height / 2 * slopeForce * Time.deltaTime);
+        else {
+            if(currentWaypoint == 0) {
+                transform.LookAt(new Vector3(waypointList[1].transform.position.x, transform.position.y, transform.position.z));
+                currentWaypoint = 1;
+            }
+            else {
+                transform.LookAt(new Vector3(waypointList[0].transform.position.x, transform.position.y, transform.position.z));
+                currentWaypoint = 0;
+            }
         }
     }
 

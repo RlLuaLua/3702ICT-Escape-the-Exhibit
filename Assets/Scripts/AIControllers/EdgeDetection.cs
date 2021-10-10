@@ -9,6 +9,6 @@ public class EdgeDetection : MonoBehaviour
     {
         Ray ray = new Ray(transform.position + transform.TransformDirection(new Vector3(0, 0f, 0.5f)), new Vector3(0, -1f, 0));
         Debug.DrawRay(ray.origin, ray.direction, Color.red);
-        isTouching = Physics.Raycast(ray, 0.3f);
+        isTouching = Physics.Raycast(ray, 1f);
     }
 }
