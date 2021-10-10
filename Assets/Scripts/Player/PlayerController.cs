@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Raycast to below the character to check if character is on ground as set isGrounded
-        if(Physics.Raycast(transform.position, Vector3.down, 0.1f)) {
+        if(Physics.Raycast(transform.position, Vector3.down, 0.05f)) {
             isGrounded = true;
         }
         else {
