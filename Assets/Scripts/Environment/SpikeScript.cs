@@ -10,6 +10,6 @@ public class SpikeScript : MonoBehaviour
     public void OnTriggerEnter(Collider collider)
     {
         if(collider.gameObject.tag == "Player")
-            GameObject.FindGameObjectWithTag("Player").GetComponent<HealthController>().ReceiveDamage(damage);
+            GameObject.Find("Player").GetComponent<HealthController>().ReceiveDamage(damage);
     }
 }
