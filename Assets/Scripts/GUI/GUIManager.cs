@@ -37,11 +37,6 @@ public class GUIManager : MonoBehaviour
         }
     }
 
-    // public void ReloadLevel()
-    // { 
-    //     SceneManager.LoadScene(LevelNameForLevel(level));
-    // }
-
     public void RestartGame()
     {
         level = 0;
