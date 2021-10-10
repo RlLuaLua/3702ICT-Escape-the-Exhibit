@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
             velocity.y = -0.5f;
             animator.SetBool("isJumping", false);
         }
-
         
         // Find which direction user is pressing on left or right using AD or arrow keys
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -43,6 +42,7 @@ public class PlayerController : MonoBehaviour
                 direction.y = 0;
             }
         }
+
         if (direction.magnitude >= 0.1f) {
             animator.SetBool("isWalking", true);
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg, ref turnVelocity, 0.1f) ;
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         if (!Input.anyKey && isGrounded) {
             animator.SetBool("isWalking", false);
         }
-        if(Input.GetKey(KeyCode.W) && isGrounded) {
+        if(Input.GetKeyDown(KeyCode.W) && isGrounded) {
             velocity.y = Mathf.Sqrt(1.0f * -2.0f * Physics.gravity.y);
             animator.SetBool("isJumping", true);
         }
