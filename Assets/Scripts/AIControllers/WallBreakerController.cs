@@ -111,7 +111,7 @@ public class WallBreakerController : MonoBehaviour
         }
         if (collider.gameObject.tag == "Side")
         {
-            currentState = FSMState.Stunned;
+            currentState = FSMState.Idle;
         }
         
     }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7060249144557482985}
   - component: {fileID: 5053034904712529699}
   - component: {fileID: 782947134658308636}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grass Block Ramp (half)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

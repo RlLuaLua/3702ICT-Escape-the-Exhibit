@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2125270254634969121}
   - component: {fileID: 4222842909737114859}
   - component: {fileID: -6930141423663898470}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grass Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8939323990435758283}
   - component: {fileID: 8932748652383953887}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sides
   m_TagString: Side
   m_Icon: {fileID: 0}
