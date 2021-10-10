@@ -895,7 +895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   turnVelocity: 1
-  velocity: {x: 0, y: 0, z: 0}
+  jumpForce: 6.5
   isGrounded: 0
 --- !u!114 &2597335426360529598
 MonoBehaviour:

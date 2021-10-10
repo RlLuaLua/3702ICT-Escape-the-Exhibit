@@ -6,8 +6,10 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     public float moveSpeed;
     public float turnVelocity;
-    public Vector3 velocity;
+
+    public float jumpForce = 5f;
     public bool isGrounded;
+    private Vector3 direction;
 
     // Start is called before the first frame update
     void Start()
@@ -30,35 +32,44 @@ public class PlayerController : MonoBehaviour
 
         // If grounded, reset y velocity and set animation bool for isJumping to false
         if (isGrounded) {
-            velocity.y = -0.5f;
+            direction.y = -0.5f;
             animator.SetBool("isJumping", false);
         }
         
         // Find which direction user is pressing on left or right using AD or arrow keys
         float horizontal = Input.GetAxisRaw("Horizontal");
-        Vector3 direction = new Vector3(horizontal, 0, 0).normalized;
+        direction = new Vector3(horizontal * moveSpeed, direction.y, 0);
+
+        // If no key is being pressed and player is grounded then set isWalking Animation to false
+        if (!Input.anyKey && isGrounded) {
+            animator.SetBool("isWalking", false);
+        }
+
+        if(Input.GetKeyDown(KeyCode.W) && isGrounded) {
+            direction.y += jumpForce;
+            animator.SetBool("isJumping", true);
+        }
+        
+        // Rotate player
+        if(direction.x >= 0.1f || -0.1f >= direction.x) {
+            animator.SetBool("isWalking", true);
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg, ref turnVelocity, 0.1f) ;
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+        }
+
+        //If character hits the underside of a block (collides with something above it) prevent sticking
         if ((controller.collisionFlags & CollisionFlags.Above) != 0) {
             if (direction.y > 0) {
                 direction.y = 0;
             }
         }
 
-        if (direction.magnitude >= 0.1f) {
-            animator.SetBool("isWalking", true);
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg, ref turnVelocity, 0.1f) ;
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
-            controller.Move(direction * moveSpeed * Time.deltaTime);
-        }
-        if (!Input.anyKey && isGrounded) {
-            animator.SetBool("isWalking", false);
-        }
-        if(Input.GetKeyDown(KeyCode.W) && isGrounded) {
-            velocity.y = Mathf.Sqrt(1.0f * -2.0f * Physics.gravity.y);
-            animator.SetBool("isJumping", true);
-        }
-        if (!isGrounded) {
-            velocity.y += Physics.gravity.y * Time.deltaTime;
-        }
-        controller.Move(velocity * Time.deltaTime);
+        direction.y += Physics.gravity.y * Time.deltaTime;
+        controller.Move(direction * Time.deltaTime);
+    }
+
+    void OnControllerColliderHit(ControllerColliderHit hit) {
+        if ((controller.collisionFlags & CollisionFlags.Above) != 0)
+            Debug.Log(hit.gameObject.name);
     }
 }
