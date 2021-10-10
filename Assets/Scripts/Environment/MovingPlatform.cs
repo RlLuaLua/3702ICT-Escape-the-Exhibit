@@ -13,11 +13,11 @@ public class MovingPlatform : MonoBehaviour
 
     void OnTriggerEnter(Collider collider) {
         if (collider.gameObject.tag == "Player") {
-            collider.transform.SetParent(transform);
+            collider.transform.parent.SetParent(transform);
         }
     }
 
     void OnTriggerExit(Collider collider) {
-            collider.transform.SetParent(null);
+            collider.transform.parent.SetParent(null);
     }
 }
