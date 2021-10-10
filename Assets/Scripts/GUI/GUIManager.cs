@@ -45,7 +45,7 @@ public class GUIManager : MonoBehaviour
 
     public bool NextLevelExists()
     { 
-        return Application.CanStreamedLevelBeLoaded(LevelNameForLevel(level + 1));
+        return SceneUtility.GetBuildIndexByScenePath("Scenes/Levels/" + LevelNameForLevel(level + 1)) >= 0;
     }
 
     string LevelNameForLevel(int level)
