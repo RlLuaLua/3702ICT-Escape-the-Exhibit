@@ -82,6 +82,7 @@ public class AttackerFSM : Interactable
         {
             curState = FSMState.Dead;
         }
+
     }
 
     // Check the collision with the player
@@ -171,11 +172,23 @@ public class AttackerFSM : Interactable
 
     protected void Move()
     {
-        animator.Play("Walk", -1);
-        moveDirection = new Vector3(transform.forward.x * moveSpeed, moveDirection.y, 0f);
-        moveDirection.y += (Physics.gravity.y * Time.deltaTime);
-        controller.Move(moveDirection * Time.deltaTime);
-        AdjustMoveOnSlope();
+        if (transform.GetComponent<EdgeDetection>().isTouching) {
+            animator.Play("Walk", -1);
+            moveDirection = new Vector3(transform.forward.x * moveSpeed, moveDirection.y, 0f);
+            moveDirection.y += (Physics.gravity.y * Time.deltaTime);
+            controller.Move(moveDirection * Time.deltaTime);
+            AdjustMoveOnSlope();
+        }
+        else {
+            if (currentWaypoint == 0) {
+                transform.LookAt(new Vector3(waypointList[1].transform.position.x, transform.position.y, transform.position.z));
+                currentWaypoint = 1;
+            }
+            else {
+                transform.LookAt(new Vector3(waypointList[0].transform.position.x, transform.position.y, transform.position.z));
+                currentWaypoint = 0;
+            }
+        }
     }
 
     // Raycast from controller to ground to determine if on slope. If is on slope, increase downwards force to smooth movement down slope
