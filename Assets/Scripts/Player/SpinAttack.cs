@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpinAttack : MonoBehaviour
 {
-
+    public AudioSource spin;
     public float SpinRange;
     public LayerMask interactable;
     protected Animator animator;
@@ -18,6 +18,7 @@ public class SpinAttack : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             animator.SetBool("isSpinning", true);
+            spin.Play();
             Spin();
         }
     }

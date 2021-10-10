@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class HealthController : MonoBehaviour
 {
+    public AudioSource death;
     public float max_health = 5;
     public float cur_health;
     public float start_health = 3;
@@ -40,6 +41,7 @@ public class HealthController : MonoBehaviour
         GetComponent<Animator>().Play("RecieveHit", -1);
         if (!alive)
         {
+            death.Play();
             return;
         }
         if (invulntimer > 0)

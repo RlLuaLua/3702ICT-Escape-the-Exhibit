@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class CheckpointScript : MonoBehaviour
 {
+    public AudioSource victory;
     public string nextLevelName;
     [SerializeField] bool isEnabled;
 
@@ -14,6 +15,7 @@ public class CheckpointScript : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            victory.Play();
             SceneManager.LoadScene(nextLevelName.Length == 0 ? "Credits" : nextLevelName);
         }
     }

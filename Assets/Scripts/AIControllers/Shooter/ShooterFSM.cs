@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ShooterFSM : Interactable
 {
+    public AudioSource shot;
     protected CharacterController controller;
     protected Animator animator;
     protected Transform playerTransform; // Player Transform
@@ -156,11 +157,12 @@ public class ShooterFSM : Interactable
             if (bulletSpawnPoint & bullet)
             {
                 Instantiate(bullet, bulletSpawnPoint.transform.position, bulletSpawnPoint.transform.rotation);
+                shot.Play();
             }
         }
     }
 
-        private bool CanSeePlayer()
+    private bool CanSeePlayer()
     {
         RaycastHit hit;
         Vector3 direction = new Vector3(playerTransform.position.x, playerTransform.position.y + 0.5f, 0) - new Vector3(transform.position.x, transform.position.y + 0.5f, 0);

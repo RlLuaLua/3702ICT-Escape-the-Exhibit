@@ -4,6 +4,8 @@ public class LeverController : Interactable
 {
     public GameObject[] platforms;
     
+    public AudioSource lever;
+
     public GameObject handle;
     public enum Source {
         Player,
@@ -38,7 +40,7 @@ public class LeverController : Interactable
             }
             handle.transform.localRotation = Quaternion.Euler(0, 0, isOn ? -45 : 45);
             timesInteracted++;
-            
+            lever.Play();
             foreach(GameObject platform in platforms){
                 platform.GetComponent<LeverMove>().Interact();
             }
