@@ -9,7 +9,7 @@ public class HealthPickup : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            other.gameObject.SendMessage("AddHealth", healthAmount);
+            other.gameObject.GetComponent<HealthController>().AddHealth(healthAmount);
             Destroy(gameObject);
             pickup.Play();
         }
