@@ -37,6 +37,7 @@ public class HealthController : MonoBehaviour
 
     public void ReceiveDamage( float damageAmount )
     {
+        GetComponent<Animator>().Play("RecieveHit", -1);
         if (!alive)
         {
             return;
