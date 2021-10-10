@@ -189,7 +189,7 @@ public class AttackerFSM : Interactable
                 transform.LookAt(new Vector3(waypointList[1].transform.position.x, transform.position.y, transform.position.z));
                 currentWaypoint = 1;
             }
-            else {
+            if (currentWaypoint == 1) {
                 transform.LookAt(new Vector3(waypointList[0].transform.position.x, transform.position.y, transform.position.z));
                 currentWaypoint = 0;
             }
