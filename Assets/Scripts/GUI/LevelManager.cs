@@ -8,7 +8,8 @@ public class LevelManager : MonoBehaviour
     {
         Playing,
         Won,
-        Lost
+        Lost,
+        Paused
     }
     
     public int level;
@@ -16,7 +17,8 @@ public class LevelManager : MonoBehaviour
     private GUIManager manager;
 
     //Alert canvas (in-front of scene elements)
-    [SerializeField] private Canvas alertCanvas;
+    [SerializeField] private Canvas winLossCanvas;
+    [SerializeField] private Canvas pausedCanvas;
     [SerializeField] private Image gameStateImage;
     [SerializeField] private Text alertText;
 
@@ -95,6 +97,7 @@ public class LevelManager : MonoBehaviour
             case LevelState.Playing: UpdatePlayingState(); break;
             case LevelState.Won: UpdateWonState(); break;
             case LevelState.Lost: UpdateLostState(); break;
+            case LevelState.Paused: UpdatePausedState(); break;
         }
     }
 
@@ -102,7 +105,7 @@ public class LevelManager : MonoBehaviour
     {
         playerHealthController.gameObject.SetActive(true);
 
-        // alertCanvas.gameObject.SetActive(false);
+        // winLossCanvas.gameObject.SetActive(false);
 
         aliveEnemies = enemies.Length;
 
@@ -127,6 +130,8 @@ public class LevelManager : MonoBehaviour
         if (playerHealthController.cur_health <= 0)
         {
             state = LevelState.Lost;
+        } else if (Input.GetKeyDown(KeyCode.Escape)) {
+            state = LevelState.Paused;
         }
     }
 
@@ -135,7 +140,7 @@ public class LevelManager : MonoBehaviour
         playerHealthController.gameObject.SetActive(false);
         alertText.text = "Nice work! The exhibition will go ahead! Want to go back in time and do it again?";
         gameStateImage.sprite = loadSpriteForWin(true);
-        alertCanvas.gameObject.SetActive(true);  
+        winLossCanvas.gameObject.SetActive(true);  
     }
 
     void UpdateLostState()
@@ -143,7 +148,13 @@ public class LevelManager : MonoBehaviour
         playerHealthController.gameObject.SetActive(false);        
         alertText.text = "Now the exhibition will have to be cancelled! Would you like to try again?";
         gameStateImage.sprite = loadSpriteForWin(false);
-        alertCanvas.gameObject.SetActive(true);
+        winLossCanvas.gameObject.SetActive(true);
+    }
+
+    void UpdatePausedState()
+    {
+        playerHealthController.gameObject.SetActive(false);        
+        pausedCanvas.gameObject.SetActive(true);
     }
 
     Sprite loadSpriteForWin(bool win)
@@ -154,14 +165,19 @@ public class LevelManager : MonoBehaviour
 
     void NextLevel()
     {
-        // level++;
         manager?.ShowNextLevel();
-        // Reset();
     }
 
     public void PlayAgain()
     {
         manager?.RestartGame();
+    }
+
+    public void DismissPause()
+    {
+        state = LevelState.Playing;
+        playerHealthController.gameObject.SetActive(true);        
+        pausedCanvas.gameObject.SetActive(false);
     }
 
     public void EndGame()
