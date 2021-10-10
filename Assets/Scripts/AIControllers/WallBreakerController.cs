@@ -107,6 +107,7 @@ public class WallBreakerController : MonoBehaviour
             currentState = FSMState.Stunned;
         }
         if (collider.gameObject.tag == "Breakable_Wall") {
+            collider.gameObject.GetComponent<DestroyBreakableWallScript>().DestroyAndSpawnEmitter();
             currentState = FSMState.Defeat;
         }
         if (collider.gameObject.tag == "Side")

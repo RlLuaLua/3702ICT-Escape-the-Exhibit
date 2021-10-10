@@ -72,7 +72,7 @@ public class AttackerFSM : Interactable
                 curState = FSMState.Chase;
             }
             // Return to patrol state after the player leaves the chase range
-            else if (playerDist > chaseRange)
+            else if (!CanSeePlayer() || playerDist > chaseRange)
             {
                 curState = FSMState.Patrol;
             }
@@ -143,7 +143,12 @@ public class AttackerFSM : Interactable
         else
         {
             moveSpeed = chaseMoveSpeed; //set move speed to chase move speed
-            Move();
+            if (GetComponent<EdgeDetection>().isTouching) {
+                Move();
+            }
+            else {
+                animator.Play("Taunt", -1);
+            }
         }
     }
 
@@ -163,7 +168,7 @@ public class AttackerFSM : Interactable
     private bool CanSeePlayer()
     {
         RaycastHit hit;
-        Vector3 direction = new Vector3(playerTransform.position.x, 0.5f, 0) - new Vector3(transform.position.x, transform.position.y + 0.5f, 0);
+        Vector3 direction = new Vector3(playerTransform.position.x, transform.position.y + 0.5f, 0) - new Vector3(transform.position.x, transform.position.y + 0.5f, 0);
         direction.z = 0;
         bool canSeePlayer = Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), direction, out hit) && hit.collider.gameObject.tag == "Player";
         Debug.DrawRay(transform.position + new Vector3(0, 0.5f, 0), direction, Color.cyan);
