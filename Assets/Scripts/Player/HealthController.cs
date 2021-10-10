@@ -16,8 +16,6 @@ public class HealthController : MonoBehaviour
     public float gracePeriod;
     public bool alive = true;
 
-    public Text healthText;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -32,8 +30,6 @@ public class HealthController : MonoBehaviour
         {
             invulntimer = 0;
         }
-        if (healthText != null)
-            healthText.text = "Health: " + cur_health.ToString();
     }
 
     public void ReceiveDamage( float damageAmount )

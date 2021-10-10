@@ -156,7 +156,7 @@ public class LevelManager : MonoBehaviour
     {
         // level++;
         manager?.ShowNextLevel();
-        Reset();
+        // Reset();
     }
 
     public void PlayAgain()
