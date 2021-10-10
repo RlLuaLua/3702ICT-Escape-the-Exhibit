@@ -39,11 +39,10 @@ public class LeverMove : MonoBehaviour
         }else{
             curState = MoveType.none;
         }
-        Debug.Log("yeeha");
     }
     
     protected void UpdateNoneState(){
-        // transform.position = Vector3.MoveTowards(transform.position, start.transform.position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, start.transform.position, speed * Time.deltaTime);
     }
 
     protected void UpdateOneMoveState(){
