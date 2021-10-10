@@ -7,9 +7,9 @@ public class SpikeScript : MonoBehaviour
     float damage = 1;
 
     // Update is called once per frame
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider collider)
     {
-        if(other.tag == "Player")
-            other.GetComponent<HealthController>().ReceiveDamage(damage);
+        if(collider.gameObject.tag == "Player")
+            GameObject.FindGameObjectWithTag("Player").GetComponent<HealthController>().ReceiveDamage(damage);
     }
 }
