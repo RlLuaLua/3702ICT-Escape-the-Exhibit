@@ -79,7 +79,7 @@ public class LevelManager : MonoBehaviour
             trans.Rotate(new Vector3(0,0,Random.rotation.eulerAngles.z));
 
             Image image = imgObject.AddComponent<Image>();
-            Texture2D tex = Resources.Load<Texture2D>("Ink");
+            Texture2D tex = Resources.Load<Texture2D>("UI/Ink");
             image.sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
             imgObject.transform.SetParent(paintingImage.transform);
 
@@ -114,7 +114,7 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        enemiesText.text = "Enemies: " + aliveEnemies;
+        enemiesText.text = "Enemies: " + aliveEnemies.ToString();
         levelText.text = "Level: " + level.ToString();
 
         healthMask.rectTransform.sizeDelta = new Vector2(healthMaskMaxWitdth / playerHealthController.max_health * playerHealthController.cur_health, healthMask.rectTransform.sizeDelta.y);
