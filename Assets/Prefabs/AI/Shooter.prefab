@@ -1046,9 +1046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ea5801bca3923b4181ae6c0b1d239ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ground:
-    serializedVersion: 2
-    m_Bits: 64
+  isTouching: 0
 --- !u!114 &5168292760833622926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1068,8 +1066,8 @@ MonoBehaviour:
   currentWaypoint: 0
   slopeForce: 5
   slopeForceRayLength: 2
-  patrolMoveSpeed: 0.2
-  chaseMoveSpeed: 0.2
+  patrolMoveSpeed: 0.5
+  chaseMoveSpeed: 1
   chaseRange: 5
   attackRange: 3
   health: 1

@@ -93,7 +93,6 @@ public class ShooterFSM : Interactable
     protected void UpdatePatrolState()
     {
         animator.Play("Walk", -1);
-        
         moveSpeed = patrolMoveSpeed; //set move speed to patrol move speed
         transform.LookAt(new Vector3(waypointList[currentWaypoint].transform.position.x, transform.position.y, transform.position.z));
         if (Mathf.Abs(transform.position.x - waypointList[currentWaypoint].transform.position.x) <= 0.05)
@@ -107,7 +106,19 @@ public class ShooterFSM : Interactable
                 currentWaypoint = 0;
             }
         }
-        MoveForward();
+        if (GetComponent<EdgeDetection>().isTouching) {
+            MoveForward();
+        }
+        else {
+            if(currentWaypoint == 0) {
+                transform.LookAt(new Vector3(waypointList[1].transform.position.x, transform.position.y, transform.position.z));
+                currentWaypoint = 1;
+            }
+            else {
+                transform.LookAt(new Vector3(waypointList[0].transform.position.x, transform.position.y, transform.position.z));
+                currentWaypoint = 0;
+            }
+        }
     }
 
     protected void UpdateChaseState()
