@@ -161,7 +161,7 @@ public class LevelManager : MonoBehaviour
 
     public void PlayAgain()
     {
-        manager?.ReloadLevel();
+        manager?.RestartGame();
     }
 
     public void EndGame()
