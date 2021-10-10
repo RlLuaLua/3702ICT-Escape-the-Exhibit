@@ -32,13 +32,14 @@ public class HealthController : MonoBehaviour
         {
             invulntimer = 0;
         }
-        if (healthText != null)
+        if (healthText != null){
             healthText.text = "Health: " + cur_health.ToString();
+        }
     }
 
     public void ReceiveDamage( float damageAmount )
     {
-        GetComponent<Animator>().Play("RecieveHit", -1);
+        
         if (!alive)
         {
             death.Play();
@@ -46,11 +47,12 @@ public class HealthController : MonoBehaviour
         }
         if (invulntimer > 0)
         {
-            Debug.Log(invulntimer);
+
             return; //dont deal damage if damage has been taken in set time
         }
-
+        
         cur_health -= damageAmount;
+        GetComponent<Animator>().Play("RecieveHit", -1);
         invulntimer += gracePeriod;//set timer for damage invulnerability
 
         Mathf.Clamp(cur_health, 0, max_health);

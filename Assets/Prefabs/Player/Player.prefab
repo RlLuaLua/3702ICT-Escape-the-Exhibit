@@ -909,11 +909,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc6904cb7919144a8f08cfe52365469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  death: {fileID: 0}
   max_health: 5
   cur_health: 0
   start_health: 3
   invulntimer: 0
-  gracePeriod: 0
+  gracePeriod: 1.5
   alive: 1
   healthText: {fileID: 0}
 --- !u!114 &345854960497617718
@@ -928,6 +929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0e552f0d8865d146bed63e5c1465fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spin: {fileID: 0}
   SpinRange: 2
   interactable:
     serializedVersion: 2
